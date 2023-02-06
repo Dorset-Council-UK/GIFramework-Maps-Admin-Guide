@@ -1,0 +1,54 @@
+site_name: Admin Guide
+plugins:
+  - search
+extra_css:
+  - stylesheets/custom.css
+theme:
+  name: material
+  features:
+    - navigation.instant
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+markdown_extensions:
+- toc:
+    permalink: true
+- tables
+- attr_list
+- admonition
+- pymdownx.details
+- pymdownx.superfences
+- pymdownx.emoji:
+    emoji_index: !!python/name:materialx.emoji.twemoji
+    emoji_generator: !!python/name:materialx.emoji.to_svg
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/Dorset-Council-UK/GIFramework-Maps
+copyright: All content is available under the Open Government Licence v3.0 except where otherwise stated
+nav:
+    - Home: 'index.md'
+    - 'Administration via the GUI':
+        - 'Getting started': 'gui/getting-started.md'
+    - 'Administration via the database (advanced)':
+        - 'Getting started': 'db/getting-started.md'
+        - 'Admin roles': 'db/admin-roles.md'
+        - 'Attributions': 'db/attributions.md'
+        - 'Basemaps': 'db/basemaps.md'
+        - 'Bounds': 'db/bounds.md'
+        - 'Categories': 'db/categories.md'
+        - 'Layers': 'db/layers.md'
+        - 'Print Configuration': 'db/print-config.md'
+        - 'Search Definitions': 'db/search-definitions.md'
+        - 'Theming': 'db/theming.md'
+        - 'Tours': 'db/tours.md'
+        - 'Versions': 'db/versions.md'
+        - 'Web Service Definitions': 'db/web-service-definitions.md'
+        - 'Welcome Messages': 'db/welcome-messages.md'
+        - 'Clearing the cache': 'db/clear-cache.md'
