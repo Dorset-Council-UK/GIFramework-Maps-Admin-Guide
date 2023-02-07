@@ -21,12 +21,12 @@ The first block of columns is the basic details.
 - `MaxResults` - The maximum number of results to return from the service
 - `ZoomLevel` - The zoom level to zoom to when a user clicks a search result. Optional if a geometry path, column or minimum bounding rectangle is defined
 - `EPSG` - The EPSG code of the geometry returned
-- `ValidationRegex` - An optional Regular Expression to validate the search qurey against. If a search query doesn't match the regualr expression, it won't even be attempted. Leave blank for no validation
+- `ValidationRegex` - An optional Regular Expression to validate the search query against. If a search query doesn't match the regualr expression, it won't even be attempted. Leave blank for no validation
 - `SupressGeom` - A boolean indicating if the returned geometry should be supressed or not. This prevents a pin, line or polygon from being drawn on the map when a user clicks on a search result
 
-The next block of columns are filled in depending on the `Descriminator' column. These are different depending on the type of search definition you are creating.
+The next block of columns are filled in depending on the `Discriminator' column. These are different depending on the type of search definition you are creating.
 
-- `Descriminator` - Defines the type of search definition this is. There are 3 possible options:
+- `Discriminator` - Defines the type of search definition this is. There are 3 possible options:
     - `APISearchDefinition` - Defines a search that calls a remote web API
     - `DatabaseSearchDefinition` - Defines a search that uses a locally accessible database table
     - `LocalSearchDefinition` - Definies a search that is built in to the application itself.
@@ -74,7 +74,7 @@ If you choose `DatabaseSearchDefinition , the following columns are relevant:
 - `BNGAlphaNumeric` - Searches for British National Grid Alphanumeric coordinates
 - `LatLonDecimal` - Searches for Latitiude/Longitude coordinates in Decimal format
 - `LatLonDMS` - Searches for Latitiude/Longitude coordinates in Degrees/Minutes/Seconds format
-- `SphericalMercator` - Searches for Speheric Mercator (EPSG:3857) coordinates
+- `SphericalMercator` - Searches for Spheric Mercator (EPSG:3857) coordinates
 - `PlusCode` - Searches for [PlusCodes](https://maps.google.com/pluscodes/)
 
 
