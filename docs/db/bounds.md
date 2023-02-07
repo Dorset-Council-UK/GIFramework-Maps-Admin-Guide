@@ -13,7 +13,7 @@ The `Bound` table contains the geographic bounding box definitions that can be a
 
 ### Bound
 
-This table contains the bound details. The coordinates are defined in Spehrical Mercator EPSG:3857.
+This table contains the bound details. The coordinates are defined in Spherical Mercator EPSG:3857.
 
 - `Name` - A friendly name for the bound used by admins
 - `Description` - A more detailed description for the bound used by admins

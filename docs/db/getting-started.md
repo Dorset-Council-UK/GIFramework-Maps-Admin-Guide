@@ -17,7 +17,7 @@ There are a number of tables in the database that manage different parts of the 
 | Basemap                           | Basic details about available basemaps  | [Basemaps](../db/basemaps.md) |
 | Bound                             | Geographic bounding box definitions that can be applied to layers or used as starting bounds in versions | [Bounds](../db/bounds.md) |
 | Category                          | Basic details about categories that layers can be sorted into | [Categories](../db/categories.md) |
-| CategoryLayer                     | Mapping between layers and teh categories they are added to | [Categories](../db/categories.md) |
+| CategoryLayer                     | Mapping between layers and the categories they are added to | [Categories](../db/categories.md) |
 | Layer                             | Basic details about a published layer and how it can be used | [Layers](../db/layers.md) |
 | LayerSource                       | Basic details about the source of a layer, including the type (TileWMS, XYZ etc.) and its attribution  | [Layers](../db/layers.md) |
 | LayerSourceOption                 | Contains the details about where a layer comes from and the options that will be applied to it | [Layers](../db/layers.md) |
@@ -29,7 +29,7 @@ There are a number of tables in the database that manage different parts of the 
 | TourDetails                       | Basic details about available tours that can be applied to versions, including frequency and update dates | [Tours](../db/tours.md) |
 | TourStep                          | Contains the individual steps of a tour | [Tours](../db/tours.md) |
 | VersionBasemap                    | Mapping between basemaps and versions, showing which basemaps are available in which version | [Versions](../db/versions.md) |
-| VersionCategory                   | Mapping between categories and versions, showing which categories are available in which version | [Versions](../db/versions.md) |
+| VersionCategory                   | Mapping between layer categories and versions, showing which categories are available in which version | [Versions](../db/versions.md) |
 | VersionPrintConfiguration         | Mapping between print configurations and versions, showing which print configurations are available in which version | [Versions](../db/versions.md) |
 | VersionSearchDefinition           | Mapping between search definitions and versions, showing which search definitions are available in which version | [Versions](../db/versions.md) |
 | VersionUser                       | Mapping between user identifiers and versions, showing which users have access to which login required versions | [Versions](../db/versions.md) |
