@@ -1,14 +1,13 @@
 # Versions
 
-The `Bound` table contains the geographic bounding box definitions that can be applied to layers or used as starting bounds in versions.
+The `Versions` table contains 
 
 ## Relevant tables
 
-| Table Name                        | Description                          |
-| --------------------------------- | ------------------------------------ |
-| Bound                             | Geographic bounding box definitions that can be applied to layers or used as starting bounds in versions |
-| Version                           | Contains a `BoundId` column used to define where the map starts on load |
-| Layer                             | Contains an optional `BoundId` column used to define what bounds the layer covers |
+| Table Name                          | Description                          |
+| ----------------------------------- | ------------------------------------ |
+| Versions                            | Contains the basic details about a version, including name, slug, start bound, theme and more |
+| Layer                               | Contains an optional `BoundId` column used to define what bounds the layer covers |
 | Basemap                             | Contains a `BoundId` column used to define what bounds the basemap covers |
 
 ### Bound
