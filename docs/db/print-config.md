@@ -23,7 +23,7 @@ This table contains the details of all your custom print configurations.
 
 The `VersionPrintConfiguration` table defines which print confgiurations are used in which versions.
 
-- `VersionId` - The `Id` from the `Version` table
+- `VersionId` - The `Id` from the `Versions` table
 - `PrintConfigurationId` - The `Id` from the `PrintConfigurations` table
 
 !!! note

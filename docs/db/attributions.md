@@ -1,7 +1,8 @@
 # Attributions
 
 All [layers](../db/layers.md) have an attribution, which appears at the bottom of the map and details basic copyright and licence information. We keep these in a database rather than relying on fetching metadata from the layer source for two main reasons:
-- Speed - Retrieving individual attribution information from every layers GetCapabilities is dependent on the speed of the web server, so can be slow.
+
+- Speed - Retrieving individual attribution information from every layers GetCapabilities' is dependent on the speed of the web server, so can be slow.
 - Availability - From experience, many services simply do not provide attribution information in their GetCapabilities, or it is wrong. Some types of layer (such as XYZ layers) do not even have this capability.
 
 ## Relevant tables

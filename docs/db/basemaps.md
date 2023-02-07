@@ -30,7 +30,7 @@ For more information on how to create a suitable layer source, check the [Layer 
 
 The `VersionBasemap` table defines which basemaps are available in which versions.
 
-- `VersionId` - The `Id` from the `Version` table
+- `VersionId` - The `Id` from the `Versions` table
 - `BasemapId` - The `Id` from the `Basemap` table
 - `IsDefault` - Boolean indicating whether this basemap is the default one for that version
 - `DefaultOpacity` - The default opacity (or transparency) of the basemap between 0 (invisible) and 100 (opaque). Leave blank for default of 100

@@ -51,10 +51,13 @@ This assumes the layer is provided in the standard Spherical Mercator EPSG:3857 
 #### WMS layers
 
 For WMS layers (TileWMS or ImageWMS), you need a minimum of `url` and `params` set.
-##### url
+
+`url`
+
 This should be set to the 'base' url of the WMS service. This is normally provided to you by the service, and will look something like `https://<service-url>/wms`
 
-#### params
+`params`
+
 This is a JSON object of additional parameters that are applied to the layer.
 
 The `params` object should at a minimum contain the following

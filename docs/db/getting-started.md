@@ -33,7 +33,7 @@ There are a number of tables in the database that manage different parts of the 
 | VersionPrintConfiguration         | Mapping between print configurations and versions, showing which print configurations are available in which version | [Versions](../db/versions.md) |
 | VersionSearchDefinition           | Mapping between search definitions and versions, showing which search definitions are available in which version | [Versions](../db/versions.md) |
 | VersionUser                       | Mapping between user identifiers and versions, showing which users have access to which login required versions | [Versions](../db/versions.md) |
-| Version                           | Contains the basic details about a version, including name, slug, start bound, theme and more | [Versions](../db/versions.md) |
+| Versions                          | Contains the basic details about a version, including name, slug, start bound, theme and more | [Versions](../db/versions.md) |
 | WebLayerServiceDefinitions        | Contains all the pre-defined external web services that can be used to add additional layers to the map. Applied globally | [Web Service definitions](../db/web-service-definitions.md) |
 | WelcomeMessages                   | Contains the welcome message definitions that can be applied to a version | [Welcome messages](../db/welcome-messages.md) |
 | __EfMigrationsHistory             | A table used by the application to keep track of the current state of the database. **This should not be edited as it is tied directly to the application code** | N/A |

@@ -31,7 +31,7 @@ The `CategoryLayer` table defines which layers are available in which categories
 
 The `VersionCategory` table defines which categories are available in which versions.
 
-- `VersionId` - The `Id` from the `Version` table
+- `VersionId` - The `Id` from the `Versions` table
 - `CategoryId` - The `Id` from the `Category` table
 
 !!! bug
