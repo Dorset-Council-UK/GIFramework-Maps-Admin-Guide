@@ -21,8 +21,8 @@ This table contains the role names available in the application. Currently there
 
 ### ApplicationUserRoles
 
-This table contains the mapping between a user and the roles they have been given. To give a user a role, simply provide there user identifier and the ID from the ApplicationRoles table.
+This table contains the mapping between a user and the roles they have been given. To give a user a role, simply provide their user identifier and the ID from the ApplicationRoles table.
 
 !!! hint
-    You can get a users identifier (or your own) by getting them to go to `https://<your-application-root>/account/diagnostics` and looking up the `nameidentifier` value.
+    You can get a user's identifier (or your own) by getting them to go to `https://<your-application-root>/account/diagnostics` and looking up the `nameidentifier` value.
 
