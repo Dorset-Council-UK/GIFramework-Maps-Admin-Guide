@@ -14,14 +14,14 @@ In order to use the [management interface](../gui/getting-started.md), users nee
 
 ### ApplicationRoles
 
-This table contains the role names available in the application. Currently there is only one role, GIFWAdmin. This role gives access to **all** the administrative functions of the application, so should only be given to highly trusted users. 
+This table contains the role names available in the application. Currently there is only one role, `GIFWAdmin`. This role gives access to **all** the administrative functions of the application, so should only be given to highly trusted users. 
 
 !!! warning
     The data in this table is relied on by the application directly, so should not be edited
 
 ### ApplicationUserRoles
 
-This table contains the mapping between a user and the roles they have been given. To give a user a role, simply provide their user identifier and the ID from the ApplicationRoles table.
+This table contains the mapping between a user and the roles they have been given. To give a user a role, simply provide their user identifier and the `Id` from the `ApplicationRoles` table.
 
 !!! hint
     You can get a user's identifier (or your own) by getting them to go to `https://<your-application-root>/account/diagnostics` and looking up the `nameidentifier` value.
