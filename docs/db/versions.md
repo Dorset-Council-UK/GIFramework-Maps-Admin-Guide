@@ -20,7 +20,7 @@ The `Versions` table contains all the basic information about a version of GIFra
 - `Name` - The name of the version. This also appears to the user in the top left
 - `Description` - A friendly description of the version. This also appears in the HTML meta description which is shown to search engines
 - `Slug` - The `Slug` is the bit on the end of the URL. You can have up to 3 parts to a slug, seperated by slashes. See section below on [slugs](#slugs) for more info
-- `Enabled` - A boolean indicating whether this version is enabled or not. Disabled versions will show a specific 'Disabled' message, rather than the stanard 'Not found'
+- `Enabled` - A boolean indicating whether this version is enabled or not. Disabled versions will show a specific 'Disabled' message, rather than the standard 'Not found'
 - `RequireLogin` - A boolean indicating whether this version requires the user to login or not. Permissions need to be given to users using the [`VersionUser`](#versionuser) table.
 - `RedirectionURL` - An optional URL to redirect the user to instead of loading the version. Can be useful if a version changes slug, or you want to point people elsewhere. Will issue a `HTTP 302 Found` response with the URL provided
 - `BoundId` - The `Id` of a `Bound` to use as the start extent for this version
