@@ -21,7 +21,7 @@ The first block of columns is the basic details.
 - `MaxResults` - The maximum number of results to return from the service
 - `ZoomLevel` - The zoom level to zoom to when a user clicks a search result. Optional if a geometry path, column or minimum bounding rectangle is defined
 - `EPSG` - The EPSG code of the geometry returned
-- `ValidationRegex` - An optional Regular Expression to validate the search qurey against. If a search query doesn't match the regualr expression, it won't even be attempted. Leave blank for no validation
+- `ValidationRegex` - An optional Regular Expression to validate the search query against. If a search query doesn't match the regualr expression, it won't even be attempted. Leave blank for no validation
 - `SupressGeom` - A boolean indicating if the returned geometry should be supressed or not. This prevents a pin, line or polygon from being drawn on the map when a user clicks on a search result
 
 The next block of columns are filled in depending on the `Discriminator' column. These are different depending on the type of search definition you are creating.
