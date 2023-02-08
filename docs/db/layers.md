@@ -112,7 +112,7 @@ Once this has been created, the layer table has the following fields to fill in:
 
 Info templates control how the user see's data when they click an item on the map. There are two info templates used by GIFramework Maps.
 
-- `InfoTemplate` - The template for what appears when you select a single map featur
+- `InfoTemplate` - The template for what appears when you select a single map feature
 
 <figure markdown>
   ![An InfoTemplate for a single map feature](../assets/images/feature-details-address-information.png){width="350"}
@@ -198,7 +198,7 @@ You can also apply custom formatting by passing a `format` string to the `date` 
     Assuming an attribute called `DATE_ATTRIBUTE` with the value `2023-02-07T17:10:00.000Z` (Feb 7th, 2023 at 17:10)
 
     - `{{DATE_ATTRIBUTE | date}}` :material-arrow-right: `07/02/2023`
-    - `{{DATE_ATTRIBUTE | date('yyyy')}}` :`material-arrow-right: 2023`
+    - `{{DATE_ATTRIBUTE | date('yyyy')}}` :material-arrow-right: `2023`
     - `{{DATE_ATTRIBUTE | date('ccc dd LLLL yyyy T')}}` :material-arrow-right: `Tuesday  07 February 2023 17:10`
 
 #### Conditionals
