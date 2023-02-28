@@ -39,6 +39,17 @@ nav:
     - Home: 'index.md'
     - 'Administration via the GUI':
         - 'Getting started': 'gui/getting-started.md'
+        - 'Atttributions': 'gui/attributions.md'
+        - 'Bounds': 'gui/bounds.md'
+        - 'Broadcast': 'gui/broadcast.md'
+        - 'Layers': 'gui/layers.md'
+        - 'Search definitions': 'gui/search-definitions.md'
+        - 'System': 'gui/system.md'
+        - 'Themes': 'gui/themes.md'
+        - 'Tours': 'gui/tours.md'
+        - 'Users': 'gui/users.md'
+        - 'Versions': 'gui/versions.md'
+        - 'Welcome messages': 'gui/welcome-messages.md'
     - 'Administration via the database (advanced)':
         - 'Getting started': 'db/getting-started.md'
         - 'Admin roles': 'db/admin-roles.md'

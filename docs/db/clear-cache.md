@@ -2,7 +2,7 @@
 
 Most of the data in the database tables listed here are cached for varying amounts of time, to improve performance.
 
-You would usually use the [management interface](../gui/getting-started.md) to clear the cache. If you do not have access to the management interface, you can either wait for the cache to invalidate by itself, or you will have to restart the application/recycle the application pool. This is dependent on your particular server configuration and is outside the scope of this documentation.
+You would usually use the [management interface](../gui/system.md) to clear the cache. If you do not have access to the management interface, you can either wait for the cache to invalidate by itself, or you will have to restart the application/recycle the application pool. This is dependent on your particular server configuration and is outside the scope of this documentation.
 
 ## Cached items
 
