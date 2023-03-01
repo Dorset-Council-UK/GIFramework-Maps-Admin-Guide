@@ -1,0 +1,11 @@
+:root {
+    --md-primary-fg-color:        #05476d;
+    --md-primary-fg-color--light: #00598c;
+    --md-primary-fg-color--dark:  #022e47;
+  }
+body{
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+  .md-header__title{
+      margin-left:0.5rem;
+  }
