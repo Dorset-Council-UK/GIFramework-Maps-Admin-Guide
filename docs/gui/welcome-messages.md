@@ -13,9 +13,10 @@ Select **Add new welcome message** and fill in the details:
 - Update date - a date when the message has been updated enough to reshow it to users
 - Dismiss using button only - tick the checkbox if you want users to *only* be able to dismiss your message by using the dismiss button
 - Dismiss button text - this defaults to Close if you leave it blank
+- How big you want your welcome message to appear - choose from either a pop-up window or a full screen message
 
 !!! hint
-    Ticking the **dismiss using button only** box and choosing an update frequency of **Just once** or **Always**, with custom dismiss button text can work as a *reasonable* alternative to a standard 'Agree to our terms' screen. For user experience reasons, try not to do this too much if you don't need to
+    Ticking the **dismiss using button only** box and choosing an update frequency of **Just once** or **Always**, with custom dismiss button text and a size of full screen can work as a *reasonable* alternative to a standard 'Agree to our terms' screen. For user experience reasons, try not to do this too much if you don't need to
 
 ## Edit a welcome message
 

@@ -24,9 +24,10 @@ This table contains the welcome message details.
 - `UpdateDate` - A date when this message has been updated enough to re-show it to the user. For example, if you make significant changes to the message and want to forcibly re-trigger it for all users, set this to the current date, and anyone who hasn't viewed or dismissed the message since that date will be re-prompted
 - `DismissOnButtonOnly` - A boolean indicating whether the welcome message should **only** be closed by users clicking the dismiss button at the bottom, rather than the close button in the top or by clicking outside of the popup
 - `DismissText` - An optional string for the text that will appear in the dismiss button. Leave blank for default of 'Close'
+- `ModalSize` - A string to choose the size of the modal for the welcome message. Default is 'modal-lg' but you can use 'modal-fullscreen' if you want a larger message
 
 !!! hint
-    Setting `DismissOnButtonOnly` to `true` along with a `Frequency` of `0` or `1` and a custom `DismissText` can work as a *reasonable* alternative to a standard 'Agree to our terms' screen. For user experience reasons, try not to do this too much if you don't need to
+    Setting `DismissOnButtonOnly` to `true` along with a `Frequency` of `0` or `1`, a custom `DismissText` and `ModalSize` of `modal-fullscreen` can work as a *reasonable* alternative to a standard 'Agree to our terms' screen. For user experience reasons, try not to do this too much if you don't need to
 
 ### Versions
 
