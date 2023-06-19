@@ -50,3 +50,28 @@ Select the web layer service definition you want to edit. Make the changes you w
 ### Delete a web layer service definition
 
 Select the web layer service definition you want to delete. You will be asked if you're sure, press Delete again to confirm.
+
+## Site analytics and cookie control
+
+You can configure from a number of supported analytics tools including the ability to enable associated cookie controls. 
+
+### Add a new analytics tool
+
+Select **Site analytics and cookie control** then **Add a new analytics tracker** and fill in the details:
+
+- Select from the supported tool list
+- Add the token or key provided by the supplier
+- Select any associated cookie control (currently only Civica supported)
+- Check the box if you wish to enable it right away
+- Finally, select which versions you want to apply the tool to if required. 
+
+!!! Note on versions
+    If you don't select any versions the analytics tool will be applied to all of the versions. 
+
+### Edit an analytics tool
+
+Select the tool you wish to edit from the tool list by product name. Make the changes you want and hit Save.
+
+### Delete an analytics tool
+
+Select the **Remove** link on the right of the tool list. This will remove your analytics entry. 
