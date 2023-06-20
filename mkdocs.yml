@@ -53,6 +53,7 @@ nav:
     - 'Administration via the database (advanced)':
         - 'Getting started': 'db/getting-started.md'
         - 'Admin roles': 'db/admin-roles.md'
+        - 'Analytics Definitions': 'db/analytics-definitions.md'
         - 'Attributions': 'db/attributions.md'
         - 'Basemaps': 'db/basemaps.md'
         - 'Bounds': 'db/bounds.md'
