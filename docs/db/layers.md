@@ -110,49 +110,7 @@ Once this has been created, the layer table has the following fields to fill in:
 
 #### Info Templates
 
-Info templates control how the user see's data when they click an item on the map. There are two info templates used by GIFramework Maps.
-
-- `InfoTemplate` - The template for what appears when you select a single map feature
-
-<figure markdown>
-  ![An InfoTemplate for a single map feature](../assets/images/feature-details-address-information.png){width="350"}
-  <figcaption>An `InfoTemplate` for a single map feature. Mapping &copy; Crown Copyright OS.</figcaption>
-</figure>
-
-- `InfoListTitleTemplate` - The template for what appears when you select multiple map features and are presented with a list of features
-
-<figure markdown>
-![An InfoListTitleTemplate for multiple features](../assets/images/feature-details-multiple-addresses.png){width="350"}
-  <figcaption>An `InfoListTitleTemplate` for multiple features. Mapping &copy; Crown Copyright OS.</figcaption>
-</figure>
-
-`InfoTemplate`s use a system called [nunjucks](https://mozilla.github.io/nunjucks/templating.html) for templating. You can read their documentation or the [section below](#advanced-templating) for advanced uses. For basic uses, you simply write standard HTML, and use the placeholder `{{COLUMN_NAME}}` to inject attributes into the template.
-
-!!! example
-
-    Template (assuming there are attributes called `ADDRESS` and `UPRN`):
-    
-    `<h1>{{ADDRESS}}</h1><p><strong>UPRN:</strong> {{UPRN}}</p>`
-
-    Output:
-    
-    `<h1>1 Somewhere Drive, Someplace, SM1 1AA</h1><p><strong>UPRN: </strong> 10010101001</p>`
-
-`InfoListTitleTemplate`s are simpler, and are designed for a single line of text with placeholders. It still uses nunjucks and the placeholder `{{COLUMN_NAME}}`, but should be kept simple as there may be many results listed. 
-
-!!! warning
-    Avoid using HTML in an `InfoListTitleTemplate`. The template is injected into an `<a>` tag within a `<li>` tag, so adding further HTML may cause unexpected results.
-
-!!! example
-    Template (assuming there is an attribute called `ADDRESS`):
-    
-    `Address: {{ADDRESS}}`
-
-    Output:
-    
-    - `Address: 1 Somewhere Drive, Someplace, SM1 1AA`
-    - `Address: 2 Somewhere Drive, Someplace, SM1 1AA`
-    - `Address: 3 Somewhere Drive, Someplace, SM1 1AA`
+See ['Creating info templates'](../gui/layers.md#info-templates)
 
 ### CategoryLayer
 
@@ -178,66 +136,6 @@ This is normally the best option, as it is more efficient and quicker, and can b
 The ImageWMS source is used for WMS layers that are provided 'untiled', so a single image is returned for the entire map screen. Normally you would choose TileWMS when available, but ImageWMS is particularly good if you have labels, or, if the layer is very complex, a single tile can load quicker than many smaller tiles.
 
 ## Advanced configuration
-
-### Advanced templating
-
-There are a number of advanced features built into the templating engine to allow for some smart customisation.
-
-#### Date formatting
-
-You can apply custom date formatting to datetime attributes to make them more user friendly.
-
-!!! warning
-    This is a custom extension to nunjucks and not part of the standard nunjucks templating engine
-
-To apply basic datetime formatting, simply add ` | date` after your attribute name. For example `{{DATE_ATTRIBUTE | date}}` will attempt to render the attribute `DATE_ATTRIBUTE` using the [`toLocaleDateString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString#using_tolocaledatestring) JavaScript function. In `en-GB` locales this would convert the ISO date `2023-02-07T17:10:00.000Z` to `07/02/2023`.
-
-You can also apply custom formatting by passing a `format` string to the `date` function. For example `{{DATE_ATTRIBUTE | date('yyyy')}}` will convert the ISO date `2023-02-07T17:10:00.000Z` to `2023`. This custom formatting is applied using a library called [luxon](https://moment.github.io/luxon), who provide [a table of tokens](https://moment.github.io/luxon/#/formatting?id=table-of-tokens) you can use.
-
-!!! example "Examples"
-    Assuming an attribute called `DATE_ATTRIBUTE` with the value `2023-02-07T17:10:00.000Z` (Feb 7th, 2023 at 17:10)
-
-    - `{{DATE_ATTRIBUTE | date}}` :material-arrow-right: `07/02/2023`
-    - `{{DATE_ATTRIBUTE | date('yyyy')}}` :material-arrow-right: `2023`
-    - `{{DATE_ATTRIBUTE | date('ccc dd LLLL yyyy T')}}` :material-arrow-right: `Tuesday  07 February 2023 17:10`
-
-#### Conditionals
-
-You can use basic if statements to conditionally show/hide content in a template or render it in a different way. 
-
-!!! info
-    You can read the full documentation on if statements in nunjucks [in their documentation](https://mozilla.github.io/nunjucks/templating.html#if)
-
-If statements are very simple and flexible. A basic example is
-```
-{% if attribute === 'something' %}
-  It is something
-{% endif %}
-```
-This will render the string 'It is something' if the `attribute` is equal to 'something'. Everthing between the tags can include placeholders and HTML as normal. 
-
-For example, the following will wrap the `STATUS` attribute in a `<span>` with the class `text-danger` (rendering it as red text) if the `STATUS` is 'Closed', otherwise it will not wrap it in anything.
-```
-{% if STATUS === 'Closed' %}
-    <span class="text-danger">{{STATUS}}</span>
-{% else %}
-    {{STATUS}}
-{% endif %}
-```
-
-#### Everything else
-
-There are many more helpers available. The best way to find out more is to read the [nunjucks templating documentation](https://mozilla.github.io/nunjucks/templating.html).
-
-Some useful ones you might consider:
-
-- [Math](https://mozilla.github.io/nunjucks/templating.html#math) - Perform simple math operations
-- [capitalize](https://mozilla.github.io/nunjucks/templating.html#capitalize) - Make the first letter uppercase, the rest lower case
-- [int](https://mozilla.github.io/nunjucks/templating.html#int) - Convert the value into an integer. If the conversion fails 0 is returned.
-- [lower](https://mozilla.github.io/nunjucks/templating.html#lower) - Convert string to all lower case
-- [round](https://mozilla.github.io/nunjucks/templating.html#round) - Round a number
-- [truncate](https://mozilla.github.io/nunjucks/templating.html#truncate) - Return a truncated copy of the string
-- [upper](https://mozilla.github.io/nunjucks/templating.html#upper) - Convert the string to upper case
 
 ### XYZ reprojection
 

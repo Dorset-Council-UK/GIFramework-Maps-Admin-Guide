@@ -24,7 +24,7 @@ Most of the data is cached for varying amounts of time, to improve performance.
 
 ## Web layer service definitions
 
-Web layer service definitions detail pre-defined services that users can add layers from onto their map. These services are defined just once for all versions.
+Web layer service definitions detail pre-defined services that users can add layers from onto their map, and that Admins can choose to add layers from in the [Add Layer wizard](layers.md#add-a-new-layer-using-the-wizard). These services are defined just once for all versions.
 
 ### Add a new web layer service definition
 
@@ -36,9 +36,10 @@ Select **Manage web layer service definitions** then **Add new web layer service
 - Type - the type of service. Currently only WMS is supported
 - Version - the version of the service. Leave blank and it will use version 1.1.0
 - Category - a category to group the list by. All services with the same category will be grouped in the select list presented to users
-- Sort order - the order the service appears in the list. Services are first grouped by category, then ordered
+- Sort order - the order the service appears in the list. Services are first grouped by category, then ordered by this number
 - Whether you want to enable proxy map requests - only tick this if the layer can't be used with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - Whether you want to enable proxy metadata requests - only tick this if the layer can't be used with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+- Available to Admins only? - makes this service only visible to administrators on the map and in the [Add Layer wizard](layers.md#add-a-new-layer-using-the-wizard)
 
 !!! warning
     Proxying requests can reduce performance and may even be blocked by the service provider. If in doubt, check with the service provider. 
