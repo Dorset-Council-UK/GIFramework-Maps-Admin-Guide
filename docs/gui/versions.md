@@ -25,7 +25,8 @@ Select **Create new version** and fill in the details:
 On the right side of the screen, you'll see options for:
 
 - Basemaps - choose which basemaps you want to include in your version and which one you want to set as the default
-- Categories - choose which layer categories you want to include in your version
+- [Projections](../gui/system.md#projections) - choose which projections are available and what the default map and viewing projection is
+- [Categories](../gui/layers.md#layer-categories) - choose which layer categories you want to include in your version
 
 
 ## Edit a version

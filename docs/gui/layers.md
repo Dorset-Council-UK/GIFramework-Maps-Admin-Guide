@@ -26,15 +26,19 @@ You will be taken to a page to check and update the details if necessary. Most o
 - Description - a basic description of the layer. This is shown to end users when the layer has no other description metadata available from source. This is automatically taken from the Abstract of the WMS layer if available
 - Layer type - choose the type. This will default to TileWMS, indicating you want the layer to be tiled. This is normally the right option, but you can also choose ImageWMS for untiled. Check the [help documentation on Layer types](../db/layers.md#layersourcetype) for more information
 - Attribution - the [attribution](../gui/attributions.md) you want your layer to use. If the service provided an attribution string, the system will attempt to find the best match in your list of attributions and pre-select it. This can generate false positives, and often services do not provide an attribution string, so you'll need to check this and set it yourself.
+- Projection - The projection of the data you will be requesting. If you selected 'auto' on the previous screen, this will be blank. If its blank, the layer will automatically request data in the projection of the map its within. See [Auto Projection](#auto-projection) below for more information.
 
 There is a collapsible section for 'Advanced settings'. You should generally leave this alone as it contains details that will be used behind the scenes to make your layer work. However, you can edit them if you need to.
 
 - Base URL - This should be set to the 'base' url of the WMS service. This is normally provided to you by the service, and will look something like `https://<service-url>/wms`
 - Layer Name - This is the name of the layer in the web service, not the name that users will see. This name will be used by OpenLayers to make appropriate requests to the service.
 - Format - The image format that will be used. This was available to select from the previous screen, so if you want something different, you should go back and select from the list.
-- Projection - The projection of the data you will be requesting. This was available to select from the previous screen, so if you want something different, you should go back and select from the list.
 - Version - The WMS version you will be using. This will generally be 1.1.0 or 1.3.0 and will have been selected for you, but you can override it here if you know what you are doing.
 - Require use of proxy? - Indicates whether this layer source requires the proxy. Will have been pre-selected for you based on your choices on the previous screen.
+
+#### Auto Projection
+
+GIFramework Maps will automatically request data in the projection of the map it is within unless you specifically set a projection. Auto projection is ideal in most cases where the server the data is coming from is able to handle the projections you want. However, if the server hosting the source data does not handle the projection of the map, you will need to explicity set the projection on the layer source. GIFramework Maps will then handle the reprojection required to display it properly. If you aren't sure, set the projection to one advertised by the server as compatible. 
 
 ### Add a layer from an XYZ/TMS template
 
@@ -168,7 +172,7 @@ You can also apply custom formatting by passing a `format` string to the `date` 
 !!! example "Examples"
     Assuming an attribute called `DATE_ATTRIBUTE` with the value `2023-02-07T17:10:00.000Z` (Feb 7th, 2023 at 17:10)
 
-    - `{{DATE_ATTRIBUTE | date}}` :material-arrow-right: `07/02/2023`
+    - `{{DATE_ATTRIBUTE | date}}` :material-arrow-right: `07/02/2023` (assuming `en-GB` locale, will be different depending on users locale)
     - `{{DATE_ATTRIBUTE | date('yyyy')}}` :material-arrow-right: `2023`
     - `{{DATE_ATTRIBUTE | date('ccc dd LLLL yyyy T')}}` :material-arrow-right: `Tuesday  07 February 2023 17:10`
 

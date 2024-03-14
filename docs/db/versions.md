@@ -15,6 +15,7 @@ The `Versions` table contains all the basic information about a version of GIFra
 | VersionContact                      | Lists the users that should be contacted regarding a version |
 | VersionLayer                        | Contains per-layer customisations applied to a version |
 | VersionPrintConfiguration           | Identifies which print configuration a version uses |
+| VersionProjections                  | Lists the projections available to a version and what the defaults are |
 | VersionSearchDefinition             | Lists the search definitions that are enabled in a version and their default settings |
 | VersionUser                         | Contains the users that have access to a version |
 
@@ -97,6 +98,15 @@ The `VersionPrintConfiguration` table defines which print configurations are use
 
 !!! note
     If a specific configuration is not set for a version, it will fall back to that defined for the 'general' version
+
+### VersionProjection
+
+The `VersionProjection` table defines which projection the map renders in and what projections are available for viewing.
+
+- `VersionId` - The `Id` from the `Versions` table
+- `ProjectionId` - The `Id` from the `Projections` table
+- `IsDefaultMapProjection` - Whether this projection is the one used for map rendering
+- `IsDefaultViewProjection` - Whether this projection is the default one set as the display coordinates
 
 ### VersionSearchDefinition
 

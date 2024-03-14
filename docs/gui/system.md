@@ -76,3 +76,49 @@ Select the tool you wish to edit from the tool list by product name. Make the ch
 ### Delete an analytics tool
 
 Select the **Remove** link on the right of the tool list. This will remove your analytics entry. 
+
+## Projections
+
+GIFramework Maps can use multiple projections for both the actual map rendering and the display coordinates. The Projections section lets you manage what projections are available.
+
+### Register new projection
+
+To add a new projection to the list of available projections, choose 'Register new projection'. See [Getting projection details](#getting-projection-details) below to find out how to get the information you need.
+
+- `EPSG Code` - The EPSG code of the projection
+- `Name` - The name of the projection
+- `Description` - A description of what this projection is and where it covers
+- `Proj4 or WKT Definition` - A Proj4 or WKT definition of the projection
+- `Bottom Left X (Min X)` - The bottom left X coordinate of this projections maximum bounds, in Lat/Lon
+- `Bottom Left Y (Min Y)` - The bottom left Y coordinate of this projections maximum bounds, in Lat/Lon
+- `Top Right X (Max X)` - The top right X coordinate of this projections maximum bounds, in Lat/Lon
+- `Top Right Y (Max Y)` - The top right Y coordinate of this projections maximum bounds, in Lat/Lon
+- `Default display decimal places` - The number of decimal places shown by default when showing coordinates in this projection
+
+### Edit a projection
+
+Select the projection you want to edit from the list. Make the changes you want and hit Save.
+
+!!! warning
+    Be careful editing projections, as these can have a dramatic effect on the application
+
+### Delete a projection
+
+Select the projection you want to delete from the list. At the bottom, hit Delete and confirm your choice.
+
+!!! danger
+    Make sure your projection is not being used anywhere before deleting it
+
+### Getting projection details
+
+Projections are defined using the EPSG Code, Proj4Definition and bounds. You can get these using websites such as <a href="https://epsg.io">https://epsg.io</a> or <a href="https://epsg.org/">https://epsg.org/</a>. You can use a Proj4 or WKT style definition for the projection definition. You do not have to provide a definition for the [built-in projections](#built-in-projections).
+
+### Built-in projections
+
+The following projections are built-in, and do not require a Proj4 or WKT definition. 
+
+- EPSG:3857 - Spherical Mercator
+- EPSG:4326 - WGS84 Lat/Lon
+- EPSG:4269 - NAD83 (North America)
+
+You will still need to add the projection to the list to make it available to the application.

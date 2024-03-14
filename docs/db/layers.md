@@ -83,8 +83,8 @@ Common additional parameters you may want to use include:
 
 #### Other options
 
-- `projection` - If the projection is anything other than EPSG:3857, set it here. For WMS based layers, this is enough. For XYZ layers, see the section on [XYZ reprojection](#xyz-reprojection)
-- `cswendpoint` - An endpoint to retrieve a CSW Metadata document, describing the layer. The metadata document should use Dublin Core and will be available via the 'i' button next to the layer name in the layer control.
+- `projection` - If the layer is only available in a projection that is not the same as the map you are putting it in to, set the projection here, otherwise you can not include it, and the layer will be requested in the projection of the map. For XYZ layers, see the section on [XYZ reprojection](#xyz-reprojection)
+- `cswendpoint` - An endpoint to retrieve a CSW Metadata document, describing the layer. The metadata document should use Dublin Core and will be available via the 'i' button next to the layer name in the layer control. 
 
 ### Layer
 

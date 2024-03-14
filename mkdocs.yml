@@ -76,6 +76,7 @@ nav:
         - 'Categories': 'db/categories.md'
         - 'Layers': 'db/layers.md'
         - 'Print Configuration': 'db/print-config.md'
+        - 'Projections': 'db/projections.md'
         - 'Proxying': 'db/proxy.md'
         - 'Search Definitions': 'db/search-definitions.md'
         - 'Theming': 'db/theming.md'
