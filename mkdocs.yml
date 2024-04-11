@@ -10,14 +10,30 @@ theme:
   features:
     - navigation.instant
   palette:
-    - scheme: default
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - scheme: slate
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
-        name: Switch to light mode
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to system preference
 markdown_extensions:
 - toc:
     permalink: true
@@ -28,8 +44,8 @@ markdown_extensions:
 - pymdownx.details
 - pymdownx.superfences
 - pymdownx.emoji:
-    emoji_index: !!python/name:materialx.emoji.twemoji
-    emoji_generator: !!python/name:materialx.emoji.to_svg
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
 extra:
   social:
     - icon: fontawesome/brands/github 
@@ -37,7 +53,7 @@ extra:
 copyright: All content is available under the Open Government Licence v3.0 except where otherwise stated
 nav:
     - Home: 'index.md'
-    - 'Administration via the GUI':
+    - 'Administration via the management interface':
         - 'Getting started': 'gui/getting-started.md'
         - 'Atttributions': 'gui/attributions.md'
         - 'Bounds': 'gui/bounds.md'
@@ -60,6 +76,7 @@ nav:
         - 'Categories': 'db/categories.md'
         - 'Layers': 'db/layers.md'
         - 'Print Configuration': 'db/print-config.md'
+        - 'Projections': 'db/projections.md'
         - 'Proxying': 'db/proxy.md'
         - 'Search Definitions': 'db/search-definitions.md'
         - 'Theming': 'db/theming.md'
