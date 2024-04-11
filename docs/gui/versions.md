@@ -22,7 +22,7 @@ Select **Create new version** and fill in the details:
 - Help URL (optional) - include a link to custom documentation
 - Feedback URL (optional) - include a link to a feedback form
 - Redirection URL (optional) - a URL to redirect the user to instead of loading the version. Can be useful if a version changes slug, or you want to point people elsewhere
-- Version image URL (optional) - include a URL to an image to use on the version home page. Leaving this blank will use a default image of the world instead
+- Version image URL (optional) - include a URL to an image to use on the version home page. Leaving this blank will use a default image of the world instead. We recommend image sizes of 400px by 200px for a neat and consistent look.
 - Purge cache - ticking this box will purge the cache and allow your version to be available for testing or use straight away
 
 On the right side of the screen, you'll see options for:

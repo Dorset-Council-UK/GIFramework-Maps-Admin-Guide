@@ -36,7 +36,7 @@ The `Versions` table contains all the basic information about a version of GIFra
 - `ShowLogin` - A boolean indicating whether to show a login button on the version. If a user is already logged in, the account box will still always show, regardless of this setting
 - `VersionNotes` - An optional text area to record any notes about the version. These are only seen by admin and cannot be seen by users.
 - `FeaturedVersion` - A boolean indicating whether to show a version in the 'Featured versions' area on the versions home page. Leaving this unchecked will put the version with 'All versions' underneath.
-- `VersionImageURL` - An optional URL to an image that will show on a version's card on the version home page. If a URL is not supplied, a default image of the world will be used.
+- `VersionImageURL` - An optional URL to an image that will show on a version's card on the version home page. If a URL is not supplied, a default image of the world will be used. We recommend image sizes of 400px by 200px for a neat and consistent look.
 - `Hidden` - A boolean indicating whether to hide a version from the versions home page (this will not delete a version or stop it being accessed directly by its URL).
 
 ### VersionAnalytic
