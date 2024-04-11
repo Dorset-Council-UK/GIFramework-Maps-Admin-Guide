@@ -36,7 +36,6 @@ Select **Manage web layer service definitions** then **Add new web layer service
 - Type - the type of service. Currently only WMS is supported
 - Version - the version of the service. Leave blank and it will use version 1.1.0
 - Category - a category to group the list by. All services with the same category will be grouped in the select list presented to users
-- Sort order - the order the service appears in the list. Services are first grouped by category, then ordered
 - Whether you want to enable proxy map requests - only tick this if the layer can't be used with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 - Whether you want to enable proxy metadata requests - only tick this if the layer can't be used with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 

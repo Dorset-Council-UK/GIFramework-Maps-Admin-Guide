@@ -18,7 +18,6 @@ This table contains the details of each web service that is available to users.
 - `Type` - The type of service. Currently only `WMS` is supported
 - `Version` - The version of the service. Leave blank and it will use version 1.1.0
 - `Category` - A category to group the list by. All services with the same category will be grouped in the select list presented to users
-- `SortOrder` - The order the service appears in the list. Services are first grouped by category, then ordered
 - `ProxyMapRequests` - A boolean indicating whether all `GetMap` requests for layers added by this service will be proxied by the [application proxy](../db/proxy.md)
 - `ProxyMetaRequests` - A boolean indicating whether all metadata and feature requests for this service will be proxied by the [application proxy](../db/proxy.md)
 

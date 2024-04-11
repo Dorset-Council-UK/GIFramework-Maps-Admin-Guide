@@ -16,9 +16,12 @@ Select **Create new version** and fill in the details:
 - Welcome message (optional) - the [welcome message](../gui/welcome-messages.md) you want your version to use
 - Tour (optional) -  the [tour](../gui/tours.md) you want your version to use
 - Show login option - choose whether you want to show an option for users to login
+- Show as a featured version - choose whether you want the version to be featured at the top of the version home page. Leaving this unchecked will put the version with all other versions underneath
+- Hide from version home page - choose if you want to hide the version on the version home page (if you hide a version, it can still be accessed directly by its URL)
 - Help URL (optional) - include a link to custom documentation
 - Feedback URL (optional) - include a link to a feedback form
 - Redirection URL (optional) - a URL to redirect the user to instead of loading the version. Can be useful if a version changes slug, or you want to point people elsewhere
+- Version image URL (optional) - include a URL to an image to use on the version home page. Leaving this blank will use a default image of the world instead
 - Purge cache - ticking this box will purge the cache and allow your version to be available for testing or use straight away
 
 On the right side of the screen, you'll see options for:
