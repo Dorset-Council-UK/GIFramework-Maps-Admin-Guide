@@ -24,7 +24,7 @@ You will be taken to a page to check and update the details if necessary. Most o
 
 - Name - a friendly name for administrators. This is automatically taken from the Title of the WMS layer if available
 - Description - a basic description of the layer. This is shown to end users when the layer has no other description metadata available from source. This is automatically taken from the Abstract of the WMS layer if available
-- Layer type - choose the type. This will default to TileWMS for WMS, or Vector for WFS. These is normally the right options, but you can change this depending on your requirements. Check the [help documentation on Layer types](../db/layers.md#layersourcetype) for more information
+- Layer type - choose the type. This will default to TileWMS for WMS, or Vector for WFS. These are normally the right options, but you can change this depending on your requirements. Check the [help documentation on Layer types](../db/layers.md#layersourcetype) for more information
 - Attribution - the [attribution](../gui/attributions.md) you want your layer to use. If the service provided an attribution string, the system will attempt to find the best match in your list of attributions and pre-select it. This can generate false positives, and often services do not provide an attribution string, so you'll need to check this and set it yourself.
 - Projection - The projection of the data you will be requesting. If you selected 'auto' on the previous screen, this will be blank. If its blank, the layer will automatically request data in the projection of the map its within. See [Auto Projection](#auto-projection) below for more information.
 
