@@ -12,19 +12,19 @@ You can [manually create](#add-a-new-layer-manually) a layer, or [use the wizard
 
 Using the wizard is the most straightforward way to get a layer into your map. Choose the 'Add Layer Wizard' option from the Layers management page.
 
-You will have two options, WMS and XYZ/TMS.  
+You will have two options, WMS/WFS and XYZ/TMS.  
 
-### Add a layer from a WMS service
+### Add a layer from a WMS or WFS service
 
 You can choose from the list of [pre-defined web service definitions](system.md#add-a-new-web-layer-service-definition), or enter a GetCapabilities URL to retrieve a list of layers.
 
-Once you've found the layer you want to add, check the projection and image format and change them if necessary, and then hit Add. 
+Once you've found the layer you want to add, check the projection and format and change them if necessary, and then hit Add. 
 
 You will be taken to a page to check and update the details if necessary. Most of the details should have been pre-filled for you.
 
 - Name - a friendly name for administrators. This is automatically taken from the Title of the WMS layer if available
 - Description - a basic description of the layer. This is shown to end users when the layer has no other description metadata available from source. This is automatically taken from the Abstract of the WMS layer if available
-- Layer type - choose the type. This will default to TileWMS, indicating you want the layer to be tiled. This is normally the right option, but you can also choose ImageWMS for untiled. Check the [help documentation on Layer types](../db/layers.md#layersourcetype) for more information
+- Layer type - choose the type. This will default to TileWMS for WMS, or Vector for WFS. These are normally the right options, but you can change this depending on your requirements. Check the [help documentation on Layer types](../db/layers.md#layersourcetype) for more information
 - Attribution - the [attribution](../gui/attributions.md) you want your layer to use. If the service provided an attribution string, the system will attempt to find the best match in your list of attributions and pre-select it. This can generate false positives, and often services do not provide an attribution string, so you'll need to check this and set it yourself.
 - Projection - The projection of the data you will be requesting. If you selected 'auto' on the previous screen, this will be blank. If its blank, the layer will automatically request data in the projection of the map its within. See [Auto Projection](#auto-projection) below for more information.
 
@@ -36,9 +36,24 @@ There is a collapsible section for 'Advanced settings'. You should generally lea
 - Version - The WMS version you will be using. This will generally be 1.1.0 or 1.3.0 and will have been selected for you, but you can override it here if you know what you are doing.
 - Require use of proxy? - Indicates whether this layer source requires the proxy. Will have been pre-selected for you based on your choices on the previous screen.
 
+!!! warning "Limitation"
+    Vectors cannot currently have a filter pre-applied to them. Users can apply filters to WFS based layers manually.
+
+#### Styling Vector layers
+
+!!! warning
+    This functionality is still in the early stages and there may be bugs and other issues. Use with caution.
+
+Vector layers work differently from WMS based layers. With vector data, styling is done on the client, so you need to provide styling rules to the application to tell it how to style a layer, otherwise you will get the OpenLayers defaults of blue dots/lines/polygons.
+
+!!! note
+    KML layers work a little different. They can have styling information built in, so if you don't provide a style rule, it will use that. 
+
+ Styling rules can either be provided as a URL or as a full JSON object, either in GeoStyler style format, Mapbox style format, or as an OpenLayers flat style. The easiest thing to do is to use the [GeoStyler demo](https://geostyler.github.io/geostyler-demo/) page and add your data (or a sample of it) and use the UI to style it how you want, or to import an SLD from GeoServer or QGIS into the GeoStyler demo, and convert it to GeoStyler style format.
+
 #### Auto Projection
 
-GIFramework Maps will automatically request data in the projection of the map it is within unless you specifically set a projection. Auto projection is ideal in most cases where the server the data is coming from is able to handle the projections you want. However, if the server hosting the source data does not handle the projection of the map, you will need to explicity set the projection on the layer source. GIFramework Maps will then handle the reprojection required to display it properly. If you aren't sure, set the projection to one advertised by the server as compatible. 
+GIFramework Maps will automatically request data in the projection of the map it is within unless you specifically set a projection. Auto projection is ideal in most cases where the server the data is coming from is able to handle the projections you want. However, if the server hosting the source data does not handle the projection of the map, you will need to explicitly set the projection on the layer source. GIFramework Maps will then handle the reprojection required to display it properly. If you aren't sure, set the projection to one advertised by the server as compatible. 
 
 ### Add a layer from an XYZ/TMS template
 
@@ -77,6 +92,10 @@ There is a collapsible section for 'Advanced settings'. You should generally lea
     }
     ```
 
+### Adding non-WFS based vector layers
+
+GIFramework Maps can also render vector layers from a non-WFS source, such as a KML or GeoJSON file on a web server or a non OGC API that is capable of producing valid GeoJSON. This cannot be done using the layer wizard, and must be manually added by creating a layer source with the appropriate parameters. Check the documentation on [adding a layer manually](#add-a-new-layer-manually) for more details.
+
 ## The layer details screen
 
 When you've created a source, or if you are editing an existing layer, you will see the layer details screen.
@@ -87,7 +106,7 @@ When you've created a source, or if you are editing an existing layer, you will 
 - Layer Z-Index - this is the 'layer order' on the map. Higher numbers will, by default, appear above lower numbers when both layers are turned on. For things like Aerial Photography, this should generally be set very low (such as -500). Leave blank for default of 0
 - Info List Template - the template for what appears when you click multiple items and are presented with a list of features. See [Info Templates](#info-templates) below for more information
 - Info Template - the template for what appears when you select a single map feature. See [Info Templates](#info-templates) below for more information
-- Querayable - whether you want the layer to be queryable (clicking on a feature will display further information)
+- Queryable - whether you want the layer to be queryable (clicking on a feature will display further information)
 - Filterable - whether you want the layer to be filterable
 
 !!! note
@@ -174,7 +193,7 @@ You can also apply custom formatting by passing a `format` string to the `date` 
 
     - `{{DATE_ATTRIBUTE | date}}` :material-arrow-right: `07/02/2023` (assuming `en-GB` locale, will be different depending on users locale)
     - `{{DATE_ATTRIBUTE | date('yyyy')}}` :material-arrow-right: `2023`
-    - `{{DATE_ATTRIBUTE | date('ccc dd LLLL yyyy T')}}` :material-arrow-right: `Tuesday  07 February 2023 17:10`
+    - `{{DATE_ATTRIBUTE | date('ccc dd LLLL yyyy T')}}` :material-arrow-right: `Tuesday 07 February 2023 17:10`
 
 #### Conditionals
 
@@ -189,7 +208,7 @@ If statements are very simple and flexible. A basic example is
   It is something
 {% endif %}
 ```
-This will render the string 'It is something' if the `attribute` is equal to 'something'. Everthing between the tags can include placeholders and HTML as normal. 
+This will render the string 'It is something' if the `attribute` is equal to 'something'. Everything between the tags can include placeholders and HTML as normal. 
 
 For example, the following will wrap the `STATUS` attribute in a `<span>` with the class `text-danger` (rendering it as red text) if the `STATUS` is 'Closed', otherwise it will not wrap it in anything.
 ```
@@ -248,7 +267,7 @@ This section is where you add in the details for your layers. Select **Add new l
 - Layer Z-Index - this is the 'layer order' on the map. Higher numbers will, by default, appear above lower numbers when both layers are turned on. For things like Aerial Photography, this should generally be set very low (such as -500). Leave blank for default of 0
 - Info List Template - the template for what appears when you click multiple items and are presented with a list of features. See [Info Templates](../db/layers.md#info-templates) for more information
 - Info Template - the template for what appears when you select a single map feature. See [Info Templates](../db/layers.md#info-templates) for more information
-- Querayable - whether you want the layer to be queryable (clicking on a feature will display further information)
+- Queryable - whether you want the layer to be queryable (clicking on a feature will display further information)
 - Filterable - whether you want the layer to be filterable
 
 You'll also see a button for *Advanced settings*, which are optional. You can change the default opacity and saturation here if you want to.

@@ -81,10 +81,27 @@ Common additional parameters you may want to use include:
 !!! warning
     Incorrectly formatting this JSON object can result in the layer or the entire map failing to load correctly. Edit with caution.
 
+#### Vector layers
+
+For vector layers, you will need a minimum of the `url` option. Additionally, unless you want the default OpenLayers styles, you will need a `style` option as well. See [Styling vector layers](../gui/layers.md#styling-vector-layers) for more information.
+
+Additional options include:
+- `typename` - When using a WFS service, you should set the `url` to the base server URL, and the `typename` as the layer name you are requesting
+- `format` - The format the data is in. Defaults to 'application/json' unless specified.
+- `loadingstrategy` - Can be `bbox` or `all`. This defines how the vector layer is loaded, either with a bbox strategy (loading just a bounding box worth of data at a time) or loading everything at once. In reality, WFS based layers will default to `bbox` unless specifically set to `all`, and non-WFS layers will default to `all`
+
+!!! info "Supported vector formats"
+    - JSON (`application/json`, `text/json`, `geojson` or `json`)
+    - GML3 (`text/xml; subtype=gml/3.1.1`, `gml3`)
+    - GML2 (`text/xml; subtype=gml/2.1.2`, `gml2`)
+    - KML (`application/vnd.google-earth.kml xml`, `application/vnd.google-earth.kml+xml`, `kml`)
+
+!!! warning "Limitation"
+    Vectors cannot have a filter pre-applied to them.
+
 #### Other options
 
 - `projection` - If the layer is only available in a projection that is not the same as the map you are putting it in to, set the projection here, otherwise you can not include it, and the layer will be requested in the projection of the map. For XYZ layers, see the section on [XYZ reprojection](#xyz-reprojection)
-- `cswendpoint` - An endpoint to retrieve a CSW Metadata document, describing the layer. The metadata document should use Dublin Core and will be available via the 'i' button next to the layer name in the layer control. 
 
 ### Layer
 
@@ -122,7 +139,7 @@ The `CategoryLayer` table defines which layers are available in which categories
 
 ### LayerSourceType
 
-There are currently 3 supported layer types in GIFramework Maps. More may be added in the future.
+There are currently 7 supported layer types in GIFramework Maps. More may be added in the future.
 
 #### XYZ
 The XYZ source is used for tile data that is accessed through URLs that include a zoom level and tile grid x/y coordinates. Examples include OpenStreetMap and OpenCycleMap.
@@ -134,6 +151,18 @@ This is normally the best option, as it is more efficient and quicker, and can b
 
 #### ImageWMS
 The ImageWMS source is used for WMS layers that are provided 'untiled', so a single image is returned for the entire map screen. Normally you would choose TileWMS when available, but ImageWMS is particularly good if you have labels, or, if the layer is very complex, a single tile can load quicker than many smaller tiles.
+
+#### Vector
+The Vector source is used for WFS layers or file based layers (such as a KML or GeoJSON file at a specific URL). Currently, GIFramework Maps can handle GML2, GML3, GeoJSON, JSON and KML formats as a vector source. This source type uses standard vector rendering, so is very precise and can handle things like rotating labels, but because of this it is not suitable for large datasets or those with complex geometries.
+
+#### VectorImage
+The VectorImage source is fundamentally the same as the Vector source, but can handle larger datasets and geometries slightly better, by rendering the vector as an image on the client. This does mean some sharpness is occasionally lost, and things like labels don't rotate, but its much less 'laggy' when moving the map around with large or complex datasets.
+
+#### VectorTile
+The VectorTile source is used to render VectorTiles, a common format for things like basemaps which splits vectors up into tiles and delivers them efficiently to the browser ([learn more](https://en.wikipedia.org/wiki/Vector_tiles)). MVT (Mapbox Vector Tiles) is the most common standard for this.
+
+#### OGC VectorTile
+The OGC VectorTile format is the new OGC standard for VectorTiles. It works in a similar way to VectorTiles, but is the standard promoted by the Open Geospatial Consortium. 
 
 ## Advanced configuration
 
