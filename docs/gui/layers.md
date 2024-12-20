@@ -270,7 +270,14 @@ This section is where you add in the details for your layers. Select **Add new l
 - Queryable - whether you want the layer to be queryable (clicking on a feature will display further information)
 - Filterable - whether you want the layer to be filterable
 
-You'll also see a button for *Advanced settings*, which are optional. You can change the default opacity and saturation here if you want to.
+You'll also see a button for *Advanced settings*, which are optional.
+
+- Disclaimer: The disclaimer to show when this layer is turned on. See [Layer Disclaimers](#layer-disclaimers).
+- Restricted bounds: Allows you to prevent a layer from being rendered or query outside of the defined bounds
+- Opacity/Saturation: Set the default starting opacity and saturation of this layer. Can be overridden by [Layer Customisations](../gui/versions.md#layer-customisations) or via the URL permalink
+- Default filter is editable: If a layer has a filter applied to it via a CQL_FILTER, ticking this box allows users to edit that filter. Be default, that filter will be 'locked' and can't be edited by users
+- Proxy Map Requests: Allows you to get round server CORS issues by proxying the requests via the in-built proxy server
+- Proxy Metadata Requests: Allows you to get round server CORS issues by proxying the requests via the in-built proxy server
 
 ### Layer categories
 
@@ -290,3 +297,26 @@ Select the section then layer you want to edit. Make the changes you want and hi
 ## Delete a layer
 
 Select the section then layer you want to delete. You will be asked if you're sure, press Delete again to confirm.
+
+## Layer Disclaimers
+
+You can add popup disclaimers to your layers that show when a user turns on a layer. The first step is to add a new disclaimer with the details you need.
+
+- Name: A friendly name for administrators
+- Disclaimer: The disclaimer to show. This can be plain text or HTML
+- Frequency: How often you want the disclaimer to show. The options are:
+  - Just once: Will only show once in that browser
+  - Always (once per session): Will show a maximum of once per browsing session. Refreshes do not count as a new session, but new tabs do. This prevents users from constantly being bombarded with the message every time they turn the layer on/off
+  - Once a (day/week/month etc.): Shows once per period shown
+- Dismiss Text: Optional text to show on the dismiss button. Defaults to 'Close' if you leave it blank
+
+Once you've created the disclaimer, you can go to your layer and set the disclaimer in the [Advanced settings](#layer-details) of the layer.
+
+Disclaimers work using the browsers localStorage and sessionStorage. If a user changes browser, or clears their localStorage, they will see the disclaimer again.
+
+!!! tip
+    Multiple layers can share the same disclaimer. This not only saves you from having to write multiple similar disclaimers, it also allows you to 'bundle' disclaimers together, so if you have a bunch of layers that all need the same disclaimer, the user will only see the warning once, not for every layer they click
+
+!!! warning "Limitations"
+    If a layer is already turned on (either through layer customisations or via a share link) the disclaimer will not trigger unless the user turns the layer off and back on. This is to prevent being potentially bombarded with disclaimers on first load. 
+

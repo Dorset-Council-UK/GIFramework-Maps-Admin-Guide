@@ -13,6 +13,7 @@ Layers are pretty configurable, and have lots of various options, some of which 
 | LayerSourceOption                 | Contains the details about where a layer comes from and the options that will be applied to it |
 | LayerSourceType                   | Lookup list describing the types of layers available. **This should not be edited as it is tied directly to the application code** |  
 | CategoryLayer                     | Mapping between layers and the categories they are added to |
+| LayerDisclaimers                  | List of disclaimers that can be added to a layer |
 
 ## Adding a layer
 
@@ -124,6 +125,7 @@ Once this has been created, the layer table has the following fields to fill in:
 - `Filterable` - A Boolean indicating if the user is allowed to apply filters to this layer
 - `ProxyMapRequests` - A Boolean indicating if all GetMap requests should be proxied via the [application proxy](../db/proxy.md). Only use this if a remote layer can't handle CORS requests (errors will appear in the console and layer control when using this layer if this is the case). See [Proxying](../db/proxy.md) for more details
 - `ProxyMetaRequests` - As above, but related to all metadata and query requests, such as `GetCapabilities` and `GetFeatureInfo`. See [Proxying](../db/proxy.md) for more details
+- `LayerDisclaimerId` - An optional `Id` from the [`Layer Disclaimers`](#layer-disclaimers) table that defines which disclaimer to show for this layer. Leave blank for no disclaimer
 
 #### Info Templates
 
@@ -178,3 +180,15 @@ XYZ layers can be provided in different projections. To make use of on the fly r
         "origin": [-238375.0, 1376256.0]
     }
     ```
+
+## Layer Disclaimers
+
+You can add popup disclaimers to your layers that show when a user turns on a layer. The first step is to add a new disclaimer with the details you need.
+
+- `Name` - A friendly name for administrators
+- `Disclaimer` - The disclaimer to show. This can be plain text or HTML
+- `Frequency` - A number indicating how often to show the disclaimer. Available options are:
+    - `-1` - Indicates that the disclaimer should only be shown once, and never again
+    - `0` - Indicates that the disclaimer should be shown once per browsing session. Refreshes do not count as a new session, but new tabs do. This prevents users from constantly being bombarded with the message every time they turn the layer on/off
+    - `Any positive number` - Indicates the number of days to leave between showing the disclaimer again.
+- `Dismiss Text` - Optional text to show on the dismiss button. Defaults to 'Close' if you leave it blank
