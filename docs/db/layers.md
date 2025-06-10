@@ -126,6 +126,7 @@ Once this has been created, the layer table has the following fields to fill in:
 - `ProxyMapRequests` - A Boolean indicating if all GetMap requests should be proxied via the [application proxy](../db/proxy.md). Only use this if a remote layer can't handle CORS requests (errors will appear in the console and layer control when using this layer if this is the case). See [Proxying](../db/proxy.md) for more details
 - `ProxyMetaRequests` - As above, but related to all metadata and query requests, such as `GetCapabilities` and `GetFeatureInfo`. See [Proxying](../db/proxy.md) for more details
 - `LayerDisclaimerId` - An optional `Id` from the [`Layer Disclaimers`](#layer-disclaimers) table that defines which disclaimer to show for this layer. Leave blank for no disclaimer
+- `RefreshInterval` - Optional. How often this layer should automatically refresh with new data from the server, in seconds.
 
 #### Info Templates
 
