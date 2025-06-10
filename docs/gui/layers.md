@@ -275,9 +275,10 @@ You'll also see a button for *Advanced settings*, which are optional.
 - Disclaimer: The disclaimer to show when this layer is turned on. See [Layer Disclaimers](#layer-disclaimers).
 - Restricted bounds: Allows you to prevent a layer from being rendered or query outside of the defined bounds
 - Opacity/Saturation: Set the default starting opacity and saturation of this layer. Can be overridden by [Layer Customisations](../gui/versions.md#layer-customisations) or via the URL permalink
-- Default filter is editable: If a layer has a filter applied to it via a CQL_FILTER, ticking this box allows users to edit that filter. Be default, that filter will be 'locked' and can't be edited by users
+- Default filter is editable: If a layer has a filter applied to it via a CQL_FILTER, ticking this box allows users to edit that filter. By default, that filter will be 'locked' and can't be edited by users
 - Proxy Map Requests: Allows you to get round server CORS issues by proxying the requests via the in-built proxy server
 - Proxy Metadata Requests: Allows you to get round server CORS issues by proxying the requests via the in-built proxy server
+- Refresh interval (seconds): Set how often this layer will automatically refresh data from the server without user intervention. 
 
 ### Layer categories
 
