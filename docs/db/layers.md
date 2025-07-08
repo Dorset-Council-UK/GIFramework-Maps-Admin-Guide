@@ -89,7 +89,7 @@ For vector layers, you will need a minimum of the `url` option. Additionally, un
 Additional options include:
 - `typename` - When using a WFS service, you should set the `url` to the base server URL, and the `typename` as the layer name you are requesting
 - `format` - The format the data is in. Defaults to 'application/json' unless specified.
-- `loadingstrategy` - Can be `bbox` or `all`. This defines how the vector layer is loaded, either with a bbox strategy (loading just a bounding box worth of data at a time) or loading everything at once. In reality, WFS based layers will default to `bbox` unless specifically set to `all`, and non-WFS layers will default to `all`
+- `loadingStrategy` - Can be `bbox` or `all`. This defines how the vector layer is loaded, either with a bbox strategy (loading just a bounding box worth of data at a time) or loading everything at once. In reality, WFS based layers will default to `bbox` unless specifically set to `all`, and non-WFS layers will default to `all`
 
 !!! info "Supported vector formats"
     - JSON (`application/json`, `text/json`, `geojson` or `json`)
