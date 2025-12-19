@@ -13,6 +13,7 @@ The `Versions` table contains all the basic information about a version of GIFra
 | VersionBasemaps                     | Contains details of the basemaps that a version has available and their default options |
 | VersionCategory                     | Contains a list of layer categories that a version has |
 | VersionContact                      | Lists the users that should be contacted regarding a version |
+| VersionEmailBasedAuthorizations     | Lists versions with a set of Regular Expressions to allow users to be authorized to versions by email address format rather than per user |
 | VersionLayer                        | Contains per-layer customisations applied to a version |
 | VersionPrintConfiguration           | Identifies which print configuration a version uses |
 | VersionProjections                  | Lists the projections available to a version and what the defaults are |
@@ -104,7 +105,21 @@ The `VersionContact` table defines which users should be contacted about a versi
 - `VersionId` - The `Id` from the `Versions` table
 - `UserId` - The users unique identifier provided by the identity provider
 - `DisplayName` - The users display name
+- `Email` - The users email, if not derived from the UserId
 - `Enabled` - Whether they should be included in the email drafting list
+
+### VersionEmailBasedAuthorizations
+The `VersionEmailBasedAuthorizxations` table defines a list of Regular Expressions that will be used against certain versions for email based authorization.
+Using this, adminstrators can define a version as being 'allowed' for any user with an email matching a certain regular expression.
+
+!!! danger
+    This is a powerful feature. Incorrectly built regular expressions can result in people being authorized to versions that should be. Use with caution.
+
+- `VersionId` - The `Id` from the `Versions` table
+- `EmailRegEx` - The Regular Expression that will be used to evaluate the email address of the user
+
+!!! example
+    `.+@yourdomain.com` will allow any user who's email ends with @yourdomain.com access to this version. Case insensitive. You should be sure that only authorized users can have emails ending with @yourdomain.com
 
 ### VersionLayer
 The `VersionLayer` table contains any per-layer customisations that have been applied to this version.
