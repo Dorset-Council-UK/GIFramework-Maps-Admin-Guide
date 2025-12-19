@@ -108,10 +108,10 @@ Go the edit screen of a version, and choose the 'Version contacts' button on the
 
 ## Adding or editing a contact
 
-When you add a user, you can choose to provide a friendly name to identify them to administrators, in case the name provided by the identity provider is different.
+You can add a contact using the list of users for the application, or by entering their name and email address manually. Use the list of users where possible to make sure their name/email address stays up to date.
 
 !!! note
-    The list of users comes from the list of users provided by your identity provider. There is no way at this time to add users who are not part of this list.
+    It is your responsibility to make sure the user is happy to be contacted regarding this version. Do not add people who are unaware of this, and remove contacts who are no longer needed
 
 You can check the 'Enable alerts for user' to make sure they are included in any emails or any future automated alert functionality.
 
