@@ -27,6 +27,8 @@ The `LayerSource` table contains very basic information about the layer.
 - `Description` - A basic description of the layer. This is shown to end users when the layer has no other description metadata available from source (see more about layer metadata below)
 - `LayerSourceTypeId` - The `Id` of the type of layer from the `LayerSourceType` table. This identifies the type of layer source this is. See [LayerSourceType](#layersourcetype) details below for more information.
 - `AttributionId` - The `Id` of the relevant `Attribution` that will be applied to this layer. Learn more about attributions in the [attributions documentation](../db/attributions.md)
+- `MinZoom` - the minimum published zoom level this source has available. Setting these options allows you to make use of over and under-zooming the source. Leave blank for no minimum. This only applies to XYZ layers.
+- `MaxZoom` - the maximum published zoom level this source has available. Setting these options allows you to make use of over and under-zooming the source. Leave blank for no maximum. This only applies to XYZ layers.
 
 ### LayerSourceOption
 
