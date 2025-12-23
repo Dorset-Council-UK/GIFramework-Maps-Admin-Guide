@@ -1,0 +1,2144 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../broadcast/">
+      
+      
+        <link rel="next" href="../search-definitions/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/giframework-maps-icon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Layers - Admin Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#layers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Admin Guide" class="md-header__button md-logo" aria-label="Admin Guide" data-md-component="logo">
+      
+  <img src="../../assets/giframework-maps-icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Admin Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Layers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Admin Guide" class="md-nav__button md-logo" aria-label="Admin Guide" data-md-component="logo">
+      
+  <img src="../../assets/giframework-maps-icon.svg" alt="logo">
+
+    </a>
+    Admin Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration via the management interface
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administration via the management interface
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attributions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atttributions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bounds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../broadcast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-layer-using-the-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new layer using the wizard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a new layer using the wizard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-layer-from-a-wms-or-wfs-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a layer from a WMS or WFS service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a layer from a WMS or WFS service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#styling-vector-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Styling Vector layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto Projection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-layer-from-an-xyztms-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a layer from an XYZ/TMS template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-non-wfs-based-vector-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding non-WFS based vector layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-layer-details-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The layer details screen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The layer details screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#info-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Info Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-templating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced templating
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced templating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date formatting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditionals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#everything-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Everything else
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-layer-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new layer manually
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a new layer manually">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layer-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit a layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-a-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layer-disclaimers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer Disclaimers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tours/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tours
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../welcome-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration via the database (advanced)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administration via the database (advanced)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/admin-roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/analytics-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analytics Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/attributions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attributions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/basemaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basemaps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/bounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bounds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/categories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/print-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Print Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/projections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxying
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/search-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/theming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/tours/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tours
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/web-service-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Service Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/welcome-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome Messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../db/clear-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearing the cache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-layer-using-the-wizard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new layer using the wizard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a new layer using the wizard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-layer-from-a-wms-or-wfs-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a layer from a WMS or WFS service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a layer from a WMS or WFS service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#styling-vector-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Styling Vector layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-projection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto Projection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-layer-from-an-xyztms-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a layer from an XYZ/TMS template
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-non-wfs-based-vector-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding non-WFS based vector layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-layer-details-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The layer details screen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The layer details screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#info-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Info Templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-templating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced templating
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced templating">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date formatting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditionals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditionals
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#everything-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Everything else
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-new-layer-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new layer manually
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Add a new layer manually">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layer-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer categories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit a layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-a-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layer-disclaimers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer Disclaimers
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="layers">Layers<a class="headerlink" href="#layers" title="Permanent link">&para;</a></h1>
+<p>Layers are the bedrock of GIFramework Maps. Without layers, your maps are basically useless.</p>
+<p>Layers are pretty configurable, and have lots of various options.</p>
+<p>There are three parts to creating a layer: layer sources, layer details and layer categories.</p>
+<p>You can <a href="#add-a-new-layer-manually">manually create</a> a layer, or <a href="#add-a-new-layer-using-the-wizard">use the wizard</a>. We highly recommend you use the wizard, even if you have to make changes to what it generates, as it reduces the chance of getting anything wrong.</p>
+<h2 id="add-a-new-layer-using-the-wizard">Add a new layer using the wizard<a class="headerlink" href="#add-a-new-layer-using-the-wizard" title="Permanent link">&para;</a></h2>
+<p>Using the wizard is the most straightforward way to get a layer into your map. Choose the 'Add Layer Wizard' option from the Layers management page.</p>
+<p>You will have two options, WMS/WFS and XYZ/TMS.  </p>
+<h3 id="add-a-layer-from-a-wms-or-wfs-service">Add a layer from a WMS or WFS service<a class="headerlink" href="#add-a-layer-from-a-wms-or-wfs-service" title="Permanent link">&para;</a></h3>
+<p>You can choose from the list of <a href="../system/#add-a-new-web-layer-service-definition">pre-defined web service definitions</a>, or enter a GetCapabilities URL to retrieve a list of layers.</p>
+<p>Once you've found the layer you want to add, check the projection and format and change them if necessary, and then hit Add. </p>
+<p>You will be taken to a page to check and update the details if necessary. Most of the details should have been pre-filled for you.</p>
+<ul>
+<li>Name - a friendly name for administrators. This is automatically taken from the Title of the WMS layer if available</li>
+<li>Description - a basic description of the layer. This is shown to end users when the layer has no other description metadata available from source. This is automatically taken from the Abstract of the WMS layer if available</li>
+<li>Layer type - choose the type. This will default to TileWMS for WMS, or Vector for WFS. These are normally the right options, but you can change this depending on your requirements. Check the <a href="../../db/layers/#layersourcetype">help documentation on Layer types</a> for more information</li>
+<li>Attribution - the <a href="../attributions/">attribution</a> you want your layer to use. If the service provided an attribution string, the system will attempt to find the best match in your list of attributions and pre-select it. This can generate false positives, and often services do not provide an attribution string, so you'll need to check this and set it yourself.</li>
+<li>Projection - The projection of the data you will be requesting. If you selected 'auto' on the previous screen, this will be blank. If its blank, the layer will automatically request data in the projection of the map its within. See <a href="#auto-projection">Auto Projection</a> below for more information.</li>
+</ul>
+<p>There is a collapsible section for 'Advanced settings'. You should generally leave this alone as it contains details that will be used behind the scenes to make your layer work. However, you can edit them if you need to.</p>
+<ul>
+<li>Base URL - This should be set to the 'base' url of the WMS service. This is normally provided to you by the service, and will look something like <code>https://&lt;service-url&gt;/wms</code></li>
+<li>Layer Name - This is the name of the layer in the web service, not the name that users will see. This name will be used by OpenLayers to make appropriate requests to the service.</li>
+<li>Format - The image format that will be used. This was available to select from the previous screen, so if you want something different, you should go back and select from the list.</li>
+<li>Version - The WMS version you will be using. This will generally be 1.1.0 or 1.3.0 and will have been selected for you, but you can override it here if you know what you are doing.</li>
+<li>Require use of proxy? - Indicates whether this layer source requires the proxy. Will have been pre-selected for you based on your choices on the previous screen.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Limitation</p>
+<p>Vectors cannot currently have a filter pre-applied to them. Users can apply filters to WFS based layers manually.</p>
+</div>
+<h4 id="styling-vector-layers">Styling Vector layers<a class="headerlink" href="#styling-vector-layers" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This functionality is still in the early stages and there may be bugs and other issues. Use with caution.</p>
+</div>
+<p>Vector layers work differently from WMS based layers. With vector data, styling is done on the client, so you need to provide styling rules to the application to tell it how to style a layer, otherwise you will get the OpenLayers defaults of blue dots/lines/polygons.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>KML layers work a little different. They can have styling information built in, so if you don't provide a style rule, it will use that. </p>
+</div>
+<p>Styling rules can either be provided as a URL or as a full JSON object, either in GeoStyler style format, Mapbox style format, or as an OpenLayers flat style. The easiest thing to do is to use the <a href="https://geostyler.github.io/geostyler-demo/">GeoStyler demo</a> page and add your data (or a sample of it) and use the UI to style it how you want, or to import an SLD from GeoServer or QGIS into the GeoStyler demo, and convert it to GeoStyler style format.</p>
+<h4 id="auto-projection">Auto Projection<a class="headerlink" href="#auto-projection" title="Permanent link">&para;</a></h4>
+<p>GIFramework Maps will automatically request data in the projection of the map it is within unless you specifically set a projection. Auto projection is ideal in most cases where the server the data is coming from is able to handle the projections you want. However, if the server hosting the source data does not handle the projection of the map, you will need to explicitly set the projection on the layer source. GIFramework Maps will then handle the reprojection required to display it properly. If you aren't sure, set the projection to one advertised by the server as compatible. </p>
+<h3 id="add-a-layer-from-an-xyztms-template">Add a layer from an XYZ/TMS template<a class="headerlink" href="#add-a-layer-from-an-xyztms-template" title="Permanent link">&para;</a></h3>
+<p>You can enter an XYZ/TMS URL template to create a layer.</p>
+<p>This follows the widely-used Google grid where x 0 and y 0 are in the top left. Grids like TMS where x 0 and y 0 are in the bottom left can be used by using the {-y} placeholder in the URL template, so long as the source does not have a custom tile grid.</p>
+<p>Must include <code>{x}</code>, <code>{y}</code> or <code>{-y}</code>, and <code>{z}</code> placeholders. A <code>{?-?}</code> template pattern, for example subdomain{a-f}.domain.com, may be used to split traffic across multiple domains.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>For the OpenStreetMap tile server, you would use</p>
+<p><code>https://tile.openstreetmap.org/{z}/{x}/{y}.png</code></p>
+<p>This is just an example. Do not use the OpenStreetMap tile server for heavy workloads.</p>
+</div>
+<p>When you hit 'Create XYZ source' you will be taken to a page to check and update the details if necessary. </p>
+<ul>
+<li>Name - a friendly name for administrators</li>
+<li>Description - a basic description of the layer</li>
+<li>Attribution - the <a href="../attributions/">attribution</a> you want your layer to use</li>
+</ul>
+<p>There is a collapsible section for 'Advanced settings'. You should generally leave this alone as it contains details that will be used behind the scenes to make your layer work. However, you can edit them if you need to.</p>
+<ul>
+<li>URL Template - This is what you entered on the previous screen. If you made a mistake you can update it here.</li>
+<li>Projection - If the layer is NOT in the standard EPSG:3857, you can put an alternative projection here. You will also need to enter a custom tile grid.</li>
+<li>Custom tile grid - To make use of on the fly reprojection, you need to provide an appropriate custom tile grid, describing the resolutions and origins of the XYZ layer. The service provider should be able to provide this. It will be a simple JSON object</li>
+<li>Minimum source zoom level (optional) - the minimum published zoom level this source has available. Setting these options allows you to make use of over and under-zooming the source. Leave blank for no minimum</li>
+<li>Maximum source zoom level (optional) - the maximum published zoom level this source has available. Setting these options allows you to make use of over and under-zooming the source. Leave blank for no maximum</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The custom tile grid for British National Grid EPSG:27700 is
+<div class="highlight"><pre><span></span><code>{
+    &quot;resolutions&quot;: [896.0, 448.0, 224.0, 112.0, 56.0, 28.0, 14.0, 7.0, 3.5, 1.75],
+    &quot;origin&quot;: [-238375.0, 1376256.0]
+}
+</code></pre></div></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Over and under-zooming</p>
+<p>By setting a max source zoom level, you tell the map not to request tiles for anything beyond this level. You can then set the max zoom level on the layer itself to be a higher number, and the layer will still be visible, but won't request new tiles, instead it will just zoom in.
+This is great for layers where you want people to see beyond the level that is published by the server. Use with care, as too much over-zooming will degrade the quality, and too much under-zooming will make the map unreadable.</p>
+</div>
+<h3 id="adding-non-wfs-based-vector-layers">Adding non-WFS based vector layers<a class="headerlink" href="#adding-non-wfs-based-vector-layers" title="Permanent link">&para;</a></h3>
+<p>GIFramework Maps can also render vector layers from a non-WFS source, such as a KML or GeoJSON file on a web server or a non OGC API that is capable of producing valid GeoJSON. This cannot be done using the layer wizard, and must be manually added by creating a layer source with the appropriate parameters. Check the documentation on <a href="#add-a-new-layer-manually">adding a layer manually</a> for more details.</p>
+<h2 id="the-layer-details-screen">The layer details screen<a class="headerlink" href="#the-layer-details-screen" title="Permanent link">&para;</a></h2>
+<p>When you've created a source, or if you are editing an existing layer, you will see the layer details screen.</p>
+<ul>
+<li>Name</li>
+<li>Minimum viewable zoom level (optional) - the minimum zoom this layer will be turned on for, for example if set to 12, the layer will turn off once you zoom out past level 12</li>
+<li>Maximum viewable zoom level (optional) - the maximum zoom this layer will be turned on for, for example if set to 15, the layer will turn off once you zoom in past level 15. Set to blank for no restriction</li>
+<li>Layer Z-Index - this is the 'layer order' on the map. Higher numbers will, by default, appear above lower numbers when both layers are turned on. For things like Aerial Photography, this should generally be set very low (such as -500). Leave blank for default of 0</li>
+<li>Info List Template - the template for what appears when you click multiple items and are presented with a list of features. See <a href="#info-templates">Info Templates</a> below for more information</li>
+<li>Info Template - the template for what appears when you select a single map feature. See <a href="#info-templates">Info Templates</a> below for more information</li>
+<li>Queryable - whether you want the layer to be queryable (clicking on a feature will display further information)</li>
+<li>Filterable - whether you want the layer to be filterable</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are creating a layer for an XYZ/TMS source, some options will not be available</p>
+</div>
+<p>You'll also see a button for <em>Advanced settings</em>, which are optional.</p>
+<ul>
+<li>Restricted bounds (optional) - The maximum <a href="../bounds/">bounds</a> this layer covers. This will restrict map rendering and querying outside of these bounds, which can improve performance and prevent areas you don't want shown from appearing.</li>
+<li>Default Opacity - The opacity (transparency) of the layer when you first turn it on. Users can override this value.</li>
+<li>Default Saturation - The saturation of the layer when you first turn it on. Users can override this value.</li>
+<li>Default filter is editable - Whether any default filters applied to the layer source are editable by end users.</li>
+<li>Proxy Map Requests - Whether GetMap requests should go via the <a href="../../db/proxy/">Proxy</a></li>
+<li>Proxy Map Requests - Whether Feature Info and other metadata requests should go via the <a href="../../db/proxy/">Proxy</a></li>
+</ul>
+<h3 id="info-templates">Info Templates<a class="headerlink" href="#info-templates" title="Permanent link">&para;</a></h3>
+<p>Info templates control how the user see's data when they click an item on the map. Templates are a powerful feature that allows you to convert the unfriendly attribute based tables returned from a service into friendly, human readable popups. There are two info templates used by GIFramework Maps. </p>
+<ul>
+<li>Info Template - The template for what appears when you select a single map feature</li>
+</ul>
+<figure>
+<p><img alt="An Info Template for a single map feature" src="../../assets/images/feature-details-address-information.png" width="350" />
+  </p>
+<figcaption>An Info Template for a single map feature. Mapping &copy; Crown Copyright OS.</figcaption>
+</figure>
+<ul>
+<li>Info List Template - The template for what appears when you select multiple map features and are presented with a list of features</li>
+</ul>
+<figure>
+<p><img alt="An Info List Template for multiple features" src="../../assets/images/feature-details-multiple-addresses.png" width="350" />
+  </p>
+<figcaption>An Info List Template for multiple features. Mapping &copy; Crown Copyright OS.</figcaption>
+</figure>
+<p>The templates use a system called <a href="https://mozilla.github.io/nunjucks/templating.html">nunjucks</a> for templating. You can read their documentation or the <a href="#advanced-templating">section below</a> for advanced uses. For basic uses, you simply write standard HTML, and use the placeholder <code>{{COLUMN_NAME}}</code> to inject attributes into the template.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Template (assuming there are attributes called <code>ADDRESS</code> and <code>UPRN</code>):</p>
+<p><code>&lt;h1&gt;{{ADDRESS}}&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;UPRN:&lt;/strong&gt; {{UPRN}}&lt;/p&gt;</code></p>
+<p>Output:</p>
+<p><code>&lt;h1&gt;1 Somewhere Drive, Someplace, SM1 1AA&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;UPRN: &lt;/strong&gt; 10010101001&lt;/p&gt;</code></p>
+</div>
+<p>Info List Templates are simpler, and are designed for a single line of text with placeholders. It still uses nunjucks and the placeholder <code>{{COLUMN_NAME}}</code>, but should be kept simple as there may be many results listed. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Avoid using HTML in an info list template. The template is injected into an <code>&lt;a&gt;</code> tag within a <code>&lt;li&gt;</code> tag, so adding further HTML may cause unexpected results.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Template (assuming there is an attribute called <code>ADDRESS</code>):</p>
+<p><code>Address: {{ADDRESS}}</code></p>
+<p>Output:</p>
+<ul>
+<li><code>Address: 1 Somewhere Drive, Someplace, SM1 1AA</code></li>
+<li><code>Address: 2 Somewhere Drive, Someplace, SM1 1AA</code></li>
+<li><code>Address: 3 Somewhere Drive, Someplace, SM1 1AA</code></li>
+</ul>
+</div>
+<p>The admin interface has template helpers for the Info List Template and Info Template. These helpers allow you to build your template with HTML tags and appropriate attributes.</p>
+<ul>
+<li>HTML tags (Info Templates only) - Gives you all the basic opening and closing tags for headers, paragraphs, basic styling and images. See the <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics">MDN docs on HTML basics</a> to learn more.</li>
+<li>Attributes - Gives you a list of all the attributes available in the layer source you selected. Clicking them will insert that attribute into the template, surrounded by curly braces. In some instance we may not be able to get the attributes from the service. This can often be a warning that the service will not be queryable, so you will need to check. In these cases you will get a warning and will have to write your template manually. </li>
+<li>Date formatting - Gives you some helpers to insert date formatting strings. See <a href="#date-formatting">date formatting</a> below for more detail.</li>
+<li>Preview - The preview will show you how your template will be rendered by grabbing a real feature from the service and rendering your template. In some instance we may not be able to get a feature from the service, so the preview won't work.</li>
+</ul>
+<h3 id="advanced-templating">Advanced templating<a class="headerlink" href="#advanced-templating" title="Permanent link">&para;</a></h3>
+<p>There are a number of advanced features built into the templating engine to allow for some smart customisation.</p>
+<h4 id="date-formatting">Date formatting<a class="headerlink" href="#date-formatting" title="Permanent link">&para;</a></h4>
+<p>You can apply custom date formatting to datetime attributes to make them more user friendly.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a custom extension to nunjucks and not part of the standard nunjucks templating engine</p>
+</div>
+<p>To apply basic datetime formatting, simply add <code>| date</code> after your attribute name. For example <code>{{DATE_ATTRIBUTE | date}}</code> will attempt to render the attribute <code>DATE_ATTRIBUTE</code> using the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString#using_tolocaledatestring"><code>toLocaleDateString()</code></a> JavaScript function. In <code>en-GB</code> locales this would convert the ISO date <code>2023-02-07T17:10:00.000Z</code> to <code>07/02/2023</code>.</p>
+<p>You can also apply custom formatting by passing a <code>format</code> string to the <code>date</code> function. For example <code>{{DATE_ATTRIBUTE | date('yyyy')}}</code> will convert the ISO date <code>2023-02-07T17:10:00.000Z</code> to <code>2023</code>. This custom formatting is applied using a library called <a href="https://moment.github.io/luxon">luxon</a>, who provide <a href="https://moment.github.io/luxon/#/formatting?id=table-of-tokens">a table of tokens</a> you can use.</p>
+<div class="admonition example">
+<p class="admonition-title">Examples</p>
+<p>Assuming an attribute called <code>DATE_ATTRIBUTE</code> with the value <code>2023-02-07T17:10:00.000Z</code> (Feb 7th, 2023 at 17:10)</p>
+<ul>
+<li><code>{{DATE_ATTRIBUTE | date}}</code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span> <code>07/02/2023</code> (assuming <code>en-GB</code> locale, will be different depending on users locale)</li>
+<li><code>{{DATE_ATTRIBUTE | date('yyyy')}}</code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span> <code>2023</code></li>
+<li><code>{{DATE_ATTRIBUTE | date('ccc dd LLLL yyyy T')}}</code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg></span> <code>Tuesday 07 February 2023 17:10</code></li>
+</ul>
+</div>
+<h4 id="conditionals">Conditionals<a class="headerlink" href="#conditionals" title="Permanent link">&para;</a></h4>
+<p>You can use basic if statements to conditionally show/hide content in a template or render it in a different way. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can read the full documentation on if statements in nunjucks <a href="https://mozilla.github.io/nunjucks/templating.html#if">in their documentation</a></p>
+</div>
+<p>If statements are very simple and flexible. A basic example is
+<div class="highlight"><pre><span></span><code>{% if attribute === &#39;something&#39; %}
+  It is something
+{% endif %}
+</code></pre></div>
+This will render the string 'It is something' if the <code>attribute</code> is equal to 'something'. Everything between the tags can include placeholders and HTML as normal. </p>
+<p>For example, the following will wrap the <code>STATUS</code> attribute in a <code>&lt;span&gt;</code> with the class <code>text-danger</code> (rendering it as red text) if the <code>STATUS</code> is 'Closed', otherwise it will not wrap it in anything.
+<div class="highlight"><pre><span></span><code>{% if STATUS === &#39;Closed&#39; %}
+    &lt;span class=&quot;text-danger&quot;&gt;{{STATUS}}&lt;/span&gt;
+{% else %}
+    {{STATUS}}
+{% endif %}
+</code></pre></div></p>
+<h4 id="everything-else">Everything else<a class="headerlink" href="#everything-else" title="Permanent link">&para;</a></h4>
+<p>There are many more helpers available. The best way to find out more is to read the <a href="https://mozilla.github.io/nunjucks/templating.html">nunjucks templating documentation</a>.</p>
+<p>Some useful ones you might consider:</p>
+<ul>
+<li><a href="https://mozilla.github.io/nunjucks/templating.html#math">Math</a> - Perform simple math operations</li>
+<li><a href="https://mozilla.github.io/nunjucks/templating.html#capitalize">capitalize</a> - Make the first letter uppercase, the rest lower case</li>
+<li><a href="https://mozilla.github.io/nunjucks/templating.html#int">int</a> - Convert the value into an integer. If the conversion fails 0 is returned.</li>
+<li><a href="https://mozilla.github.io/nunjucks/templating.html#lower">lower</a> - Convert string to all lower case</li>
+<li><a href="https://mozilla.github.io/nunjucks/templating.html#round">round</a> - Round a number</li>
+<li><a href="https://mozilla.github.io/nunjucks/templating.html#truncate">truncate</a> - Return a truncated copy of the string</li>
+<li><a href="https://mozilla.github.io/nunjucks/templating.html#upper">upper</a> - Convert the string to upper case</li>
+</ul>
+<h2 id="add-a-new-layer-manually">Add a new layer manually<a class="headerlink" href="#add-a-new-layer-manually" title="Permanent link">&para;</a></h2>
+<p>You can create a layer manually by</p>
+<ol>
+<li>Creating a Layer Source</li>
+<li>Adding the relevant Layer Source Options</li>
+<li>Adding a layer</li>
+<li>Adding it to a category</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We <strong>strongly</strong> suggest you use the wizard, even if you use it just to create the basics, then edit it as you need. Creating a layer source incorrectly can result in your entire map not loading correctly.</p>
+</div>
+<h3 id="layer-sources">Layer sources<a class="headerlink" href="#layer-sources" title="Permanent link">&para;</a></h3>
+<p>This section covers where your layers come from. Select <strong>Add new layer source</strong> and fill in the details:</p>
+<ul>
+<li>Name - a friendly name for administrators</li>
+<li>Description - a basic description of the layer. This is shown to end users when the layer has no other description metadata available from source</li>
+<li>Layer type - choose the type</li>
+<li>Attribution - the <a href="../attributions/">attribution</a> you want your layer to use</li>
+</ul>
+<p>Tick the <em>Create layer source option on save</em> box to automatically fill in details that will appear on the right side of the screen. You can edit these manually if you need to, but you will need to know what you are doing. For more detailed information on these options, see <a href="../../db/layers/#LayerSourceOption">database layers</a>.</p>
+<h3 id="layer-details">Layer details<a class="headerlink" href="#layer-details" title="Permanent link">&para;</a></h3>
+<p>This section is where you add in the details for your layers. Select <strong>Add new layer</strong>, you will be prompted to pick a layer source from the list. Fill in the details:</p>
+<ul>
+<li>Name</li>
+<li>Minimum viewable zoom level (optional) - the minimum zoom this layer will be turned on for, for example if set to 12, the layer will turn off once you zoom out past level 12</li>
+<li>Maximum viewable zoom level (optional) - the maximum zoom this layer will be turned on for, for example if set to 15, the layer will turn off once you zoom in past level 15. Set to blank for no restriction</li>
+<li>Layer Z-Index - this is the 'layer order' on the map. Higher numbers will, by default, appear above lower numbers when both layers are turned on. For things like Aerial Photography, this should generally be set very low (such as -500). Leave blank for default of 0</li>
+<li>Info List Template - the template for what appears when you click multiple items and are presented with a list of features. See <a href="../../db/layers/#info-templates">Info Templates</a> for more information</li>
+<li>Info Template - the template for what appears when you select a single map feature. See <a href="../../db/layers/#info-templates">Info Templates</a> for more information</li>
+<li>Queryable - whether you want the layer to be queryable (clicking on a feature will display further information)</li>
+<li>Filterable - whether you want the layer to be filterable</li>
+</ul>
+<p>You'll also see a button for <em>Advanced settings</em>, which are optional.</p>
+<ul>
+<li>Disclaimer: The disclaimer to show when this layer is turned on. See <a href="#layer-disclaimers">Layer Disclaimers</a>.</li>
+<li>Restricted bounds: Allows you to prevent a layer from being rendered or query outside of the defined bounds</li>
+<li>Opacity/Saturation: Set the default starting opacity and saturation of this layer. Can be overridden by <a href="../versions/#layer-customisations">Layer Customisations</a> or via the URL permalink</li>
+<li>Default filter is editable: If a layer has a filter applied to it via a CQL_FILTER, ticking this box allows users to edit that filter. By default, that filter will be 'locked' and can't be edited by users</li>
+<li>Proxy Map Requests: Allows you to get round server CORS issues by proxying the requests via the in-built proxy server</li>
+<li>Proxy Metadata Requests: Allows you to get round server CORS issues by proxying the requests via the in-built proxy server</li>
+<li>Refresh interval (seconds): Set how often this layer will automatically refresh data from the server without user intervention. </li>
+</ul>
+<h3 id="layer-categories">Layer categories<a class="headerlink" href="#layer-categories" title="Permanent link">&para;</a></h3>
+<p>This section is where you manage the categories that layers are organised into. Select <strong>Create new category</strong> and fill in the details:</p>
+<ul>
+<li>Name</li>
+<li>Description</li>
+<li>Order - the sort order you want your category to appear</li>
+<li>Parent category (optional) - select a parent category if the category you are creating is a child category</li>
+</ul>
+<p>On the right side of the screen, you'll be able to select all the layers you want to appear in your category.</p>
+<h2 id="edit-a-layer">Edit a layer<a class="headerlink" href="#edit-a-layer" title="Permanent link">&para;</a></h2>
+<p>Select the section then layer you want to edit. Make the changes you want and hit Save.</p>
+<h2 id="delete-a-layer">Delete a layer<a class="headerlink" href="#delete-a-layer" title="Permanent link">&para;</a></h2>
+<p>Select the section then layer you want to delete. You will be asked if you're sure, press Delete again to confirm.</p>
+<h2 id="layer-disclaimers">Layer Disclaimers<a class="headerlink" href="#layer-disclaimers" title="Permanent link">&para;</a></h2>
+<p>You can add popup disclaimers to your layers that show when a user turns on a layer. The first step is to add a new disclaimer with the details you need.</p>
+<ul>
+<li>Name: A friendly name for administrators</li>
+<li>Disclaimer: The disclaimer to show. This can be plain text or HTML</li>
+<li>Frequency: How often you want the disclaimer to show. The options are:</li>
+<li>Just once: Will only show once in that browser</li>
+<li>Always (once per session): Will show a maximum of once per browsing session. Refreshes do not count as a new session, but new tabs do. This prevents users from constantly being bombarded with the message every time they turn the layer on/off</li>
+<li>Once a (day/week/month etc.): Shows once per period shown</li>
+<li>Dismiss Text: Optional text to show on the dismiss button. Defaults to 'Close' if you leave it blank</li>
+</ul>
+<p>Once you've created the disclaimer, you can go to your layer and set the disclaimer in the <a href="#layer-details">Advanced settings</a> of the layer.</p>
+<p>Disclaimers work using the browsers localStorage and sessionStorage. If a user changes browser, or clears their localStorage, they will see the disclaimer again.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Multiple layers can share the same disclaimer. This not only saves you from having to write multiple similar disclaimers, it also allows you to 'bundle' disclaimers together, so if you have a bunch of layers that all need the same disclaimer, the user will only see the warning once, not for every layer they click</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Limitations</p>
+<p>If a layer is already turned on (either through layer customisations or via a share link) the disclaimer will not trigger unless the user turns the layer off and back on. This is to prevent being potentially bombarded with disclaimers on first load. </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All content is available under the Open Government Licence v3.0 except where otherwise stated
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Dorset-Council-UK/GIFramework-Maps" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

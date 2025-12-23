@@ -1,0 +1,1866 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../tours/">
+      
+      
+        <link rel="next" href="../web-service-definitions/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/giframework-maps-icon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Versions - Admin Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#versions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Admin Guide" class="md-header__button md-logo" aria-label="Admin Guide" data-md-component="logo">
+      
+  <img src="../../assets/giframework-maps-icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Admin Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Versions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Admin Guide" class="md-nav__button md-logo" aria-label="Admin Guide" data-md-component="logo">
+      
+  <img src="../../assets/giframework-maps-icon.svg" alt="logo">
+
+    </a>
+    Admin Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration via the management interface
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administration via the management interface
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/attributions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atttributions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/bounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bounds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/broadcast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Broadcast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/search-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/tours/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tours
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/users/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Users
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gui/welcome-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administration via the database (advanced)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Administration via the database (advanced)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../admin-roles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admin roles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analytics-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analytics Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attributions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attributions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basemaps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basemaps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bounds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../categories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Print Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxying
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Theming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tours/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tours
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relevant tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relevant tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionanalytic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionAnalytic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionbasemaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionBasemaps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioncategory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionCategory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioncontact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionContact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionemailbasedauthorizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionEmailBasedAuthorizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionlayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionLayer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionprintconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionPrintConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionprojection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionProjection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionsearchdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionSearchDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionUser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-service-definitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Service Definitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../welcome-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome Messages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clear-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clearing the cache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relevant tables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relevant tables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versions_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionanalytic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionAnalytic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionbasemaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionBasemaps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioncategory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionCategory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versioncontact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionContact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionemailbasedauthorizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionEmailBasedAuthorizations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionlayer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionLayer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionprintconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionPrintConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionprojection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionProjection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionsearchdefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionSearchDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VersionUser
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="versions">Versions<a class="headerlink" href="#versions" title="Permanent link">&para;</a></h1>
+<p>Versions are the best way to split maps up into different themes, with different layers, permissions and functionality.</p>
+<p>The <code>Versions</code> table contains all the basic information about a version of GIFramework Maps. </p>
+<h2 id="relevant-tables">Relevant tables<a class="headerlink" href="#relevant-tables" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Table Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Versions</td>
+<td>Contains the basic details about a version, including name, slug, start bound, theme and more</td>
+</tr>
+<tr>
+<td>VersionAnalytic</td>
+<td>Identifies which analytics providers are enabled for a version</td>
+</tr>
+<tr>
+<td>VersionBasemaps</td>
+<td>Contains details of the basemaps that a version has available and their default options</td>
+</tr>
+<tr>
+<td>VersionCategory</td>
+<td>Contains a list of layer categories that a version has</td>
+</tr>
+<tr>
+<td>VersionContact</td>
+<td>Lists the users that should be contacted regarding a version</td>
+</tr>
+<tr>
+<td>VersionEmailBasedAuthorizations</td>
+<td>Lists versions with a set of Regular Expressions to allow users to be authorized to versions by email address format rather than per user</td>
+</tr>
+<tr>
+<td>VersionLayer</td>
+<td>Contains per-layer customisations applied to a version</td>
+</tr>
+<tr>
+<td>VersionPrintConfiguration</td>
+<td>Identifies which print configuration a version uses</td>
+</tr>
+<tr>
+<td>VersionProjections</td>
+<td>Lists the projections available to a version and what the defaults are</td>
+</tr>
+<tr>
+<td>VersionSearchDefinition</td>
+<td>Lists the search definitions that are enabled in a version and their default settings</td>
+</tr>
+<tr>
+<td>VersionUser</td>
+<td>Contains the users that have access to a version</td>
+</tr>
+</tbody>
+</table>
+<h3 id="versions_1">Versions<a class="headerlink" href="#versions_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Name</code> - The name of the version. This also appears to the user in the top left</li>
+<li><code>Description</code> - A friendly description of the version. This also appears in the HTML meta description which is shown to search engines</li>
+<li><code>Slug</code> - The <code>Slug</code> is the bit on the end of the URL. You can have up to 3 parts to a slug, seperated by slashes. See <a href="../../gui/versions/#slugs">slugs</a> for more info</li>
+<li><code>Enabled</code> - A boolean indicating whether this version is enabled or not. Disabled versions will show a specific 'Disabled' message, rather than the standard 'Not found'</li>
+<li><code>RequireLogin</code> - A boolean indicating whether this version requires the user to login or not. Permissions need to be given to users using the <a href="#versionuser"><code>VersionUser</code></a> table.</li>
+<li><code>RedirectionURL</code> - An optional URL to redirect the user to instead of loading the version. Can be useful if a version changes slug, or you want to point people elsewhere. Will issue a <code>HTTP 302 Found</code> response with the URL provided</li>
+<li><code>BoundId</code> - The <code>Id</code> of a <code>Bound</code> to use as the start extent for this version</li>
+<li><code>ThemeId</code> - The <code>Id</code> of the <code>Theme</code> to use in this version</li>
+<li><code>HelpURL</code> - An optional URL to help documentation. A link will be put in the header of GIFramework Maps and in various other places if this URL is filled in. If left blank, no help link will be generated.</li>
+<li><code>WelcomeMessageId</code> - The <code>Id</code> of the <code>WelcomeMessage</code> to use in this version. Leave blank for no welcome message.</li>
+<li><code>FeedbackURL</code> - An optional URL to a feedback form. A link will be put in the header of GIFramework Maps if this URL is filled in. If left blank, no feedback link will be generated.</li>
+<li><code>TourDetailsId</code> - The <code>Id</code> of a <code>TourDetails</code> to use in this version. Leave blank for no tour.</li>
+<li><code>ShowLogin</code> - A boolean indicating whether to show a login button on the version. If a user is already logged in, the account box will still always show, regardless of this setting</li>
+<li><code>VersionNotes</code> - An optional text area to record any notes about the version. These are only seen by admin and cannot be seen by users.</li>
+<li><code>FeaturedVersion</code> - A boolean indicating whether to show a version in the 'Featured versions' area on the versions home page. Leaving this unchecked will put the version with 'All versions' underneath.</li>
+<li><code>VersionImageURL</code> - An optional URL to an image that will show on a version's card on the version home page. If a URL is not supplied, a default image of the world will be used. We recommend image sizes of 400px by 200px for a neat and consistent look.</li>
+<li><code>Hidden</code> - A boolean indicating whether to hide a version from the versions home page (this will not delete a version or stop it being accessed directly by its URL).</li>
+</ul>
+<h3 id="versionanalytic">VersionAnalytic<a class="headerlink" href="#versionanalytic" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionAnalytic</code> table defines which analytics providers are available in which versions.</p>
+<p>Slugs are the bit on the end of your application URL which direct you to different versions of GIFramework Maps. You can have a maximum of three slugs seperated by forward slashes. </p>
+<p>By default, there should be one called 'general' which is where you will be directed if you have no slug on your URL.</p>
+<div class="admonition danger">
+<p class="admonition-title">Reserved slugs</p>
+<p>There are a number of slugs that are reserved for use by the GIFramework Maps application. Using these will not work and may cause other unintended consequences. </p>
+<ul>
+<li><code>general</code></li>
+<li><code>account</code></li>
+<li><code>api</code></li>
+<li><code>print</code></li>
+<li><code>search</code></li>
+<li><code>broadcasthub</code></li>
+<li><code>css</code></li>
+<li><code>img</code></li>
+<li><code>lib</code></li>
+</ul>
+<p>You should not use these as the first part of the slug, regardless of any additional parts you put on the end, e.g. <code>lib/myversion</code> is <strong>not</strong> valid</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Examples</p>
+<p>'general' -&gt; Root of application e.g. <code>https://&lt;your-application-root&gt;/</code></p>
+<p>'highways' -&gt; <code>https://&lt;your-application-root&gt;/highways</code></p>
+<p>'very/long/slug' -&gt; <code>https://&lt;your-application-root&gt;/very/long/slug</code></p>
+</div>
+<h3 id="versionbasemaps">VersionBasemaps<a class="headerlink" href="#versionbasemaps" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionBasemap</code> table defines which basemaps are available in which versions.</p>
+<ul>
+<li><code>VersionId</code> - The <code>Id</code> from the <code>Versions</code> table</li>
+<li><code>BasemapId</code> - The <code>Id</code> from the <code>Basemap</code> table</li>
+<li><code>IsDefault</code> - Boolean indicating whether this basemap is the default one for that version</li>
+<li><code>DefaultOpacity</code> - The default opacity (or transparency) of the basemap between 0 (invisible) and 100 (opaque). Leave blank for default of 100</li>
+<li><code>DefaultSaturation</code> - The default saturation of the basemap between 0 (greyscale) and 100 (full colour). Leave blank for default of 100</li>
+<li><code>SortOrder</code> - The position the basemap will appear in the basemaps panel</li>
+</ul>
+<h3 id="versioncategory">VersionCategory<a class="headerlink" href="#versioncategory" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionCategory</code> table defines which categories are available in which versions.</p>
+<ul>
+<li><code>VersionId</code> - The <code>Id</code> from the <code>Versions</code> table</li>
+<li><code>CategoryId</code> - The <code>Id</code> from the <code>Category</code> table</li>
+</ul>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<p>If you want this category to appear in many versions, but in different orders, you will need to make different categories, as the ordering cannot be set by version</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If your category is a child, both the parent AND child categories need to be added to this table.</p>
+</div>
+<h3 id="versioncontact">VersionContact<a class="headerlink" href="#versioncontact" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionContact</code> table defines which users should be contacted about a version.</p>
+<ul>
+<li><code>VersionContactId</code> - Unique ID for this entry</li>
+<li><code>VersionId</code> - The <code>Id</code> from the <code>Versions</code> table</li>
+<li><code>UserId</code> - The users unique identifier provided by the identity provider</li>
+<li><code>DisplayName</code> - The users display name</li>
+<li><code>Email</code> - The users email, if not derived from the UserId</li>
+<li><code>Enabled</code> - Whether they should be included in the email drafting list</li>
+</ul>
+<h3 id="versionemailbasedauthorizations">VersionEmailBasedAuthorizations<a class="headerlink" href="#versionemailbasedauthorizations" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionEmailBasedAuthorizxations</code> table defines a list of Regular Expressions that will be used against certain versions for email based authorization.
+Using this, adminstrators can define a version as being 'allowed' for any user with an email matching a certain regular expression.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This is a powerful feature. Incorrectly built regular expressions can result in people being authorized to versions that should be. Use with caution.</p>
+</div>
+<ul>
+<li><code>VersionId</code> - The <code>Id</code> from the <code>Versions</code> table</li>
+<li><code>EmailRegEx</code> - The Regular Expression that will be used to evaluate the email address of the user</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><code>.+@yourdomain.com</code> will allow any user who's email ends with @yourdomain.com access to this version. Case insensitive. You should be sure that only authorized users can have emails ending with @yourdomain.com</p>
+</div>
+<h3 id="versionlayer">VersionLayer<a class="headerlink" href="#versionlayer" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionLayer</code> table contains any per-layer customisations that have been applied to this version.</p>
+<ul>
+<li><code>VersionId</code> - The <code>Id</code> from the <code>Versions</code> table</li>
+<li><code>LayerId</code> - The <code>Id</code> from the <code>Layer</code> table</li>
+<li><code>CategoryId</code> - The <code>Id</code> from the <code>Category</code> table</li>
+<li><code>IsDefault</code> - Whether this layer is turned on by default or not</li>
+<li><code>DefaultOpacity</code> - The default opacity of the layer</li>
+<li><code>DefaultSaturation</code> - The default saturation of the layer</li>
+<li><code>SortOrder</code> - The position this layer appears within its category</li>
+<li><code>MaxZoom</code> - The maximum viewable zoom level of the layer</li>
+<li><code>MinZoom</code> - The minimum viewable zoom level of the layer</li>
+<li><code>Id</code> - Unique autogenerated ID for this customisation</li>
+</ul>
+<h3 id="versionprintconfiguration">VersionPrintConfiguration<a class="headerlink" href="#versionprintconfiguration" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionPrintConfiguration</code> table defines which print configurations are used in which versions.</p>
+<ul>
+<li><code>VersionId</code> - The <code>Id</code> from the <code>Versions</code> table</li>
+<li><code>PrintConfigurationId</code> - The <code>Id</code> from the <code>PrintConfigurations</code> table</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a specific configuration is not set for a version, it will fall back to that defined for the 'general' version</p>
+</div>
+<h3 id="versionprojection">VersionProjection<a class="headerlink" href="#versionprojection" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionProjection</code> table defines which projection the map renders in and what projections are available for viewing.</p>
+<ul>
+<li><code>VersionId</code> - The <code>Id</code> from the <code>Versions</code> table</li>
+<li><code>ProjectionId</code> - The <code>Id</code> from the <code>Projections</code> table</li>
+<li><code>IsDefaultMapProjection</code> - Whether this projection is the one used for map rendering</li>
+<li><code>IsDefaultViewProjection</code> - Whether this projection is the default one set as the display coordinates</li>
+</ul>
+<h3 id="versionsearchdefinition">VersionSearchDefinition<a class="headerlink" href="#versionsearchdefinition" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionSearchDefinition</code> table defines which searches are available in which versions.</p>
+<ul>
+<li><code>VersionId</code> - The <code>Id</code> from the <code>Versions</code> table</li>
+<li><code>SearchDefinitionId</code> - The <code>Id</code> from the <code>SearchDefinition</code> table</li>
+<li><code>Enabled</code> - A boolean indicating whether this search is enabled by default (users can override this in the search options dialog)</li>
+<li><code>Order</code> - The order in which the search results are searched. Particularly important if the <code>StopIfFound</code> boolean is used</li>
+<li><code>StopIfFound</code> - Determines whether the further searches are conducted if a result has been found with this search</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>When you do a search, GIFramework Maps starts from the top of the list (sorted by the <code>Order</code> column) and works its way down until it finds a result. When it does, if the <code>StopIfFound</code> boolean is set to true, GIFramework Maps will not continue with any of the other searches. This prevents users from getting lots of potentially irrelevant results when a more relevant result has already been found. </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a specific search definition configuration is not found for a version, it will fall back to using search definitions defined for the 'general' version</p>
+</div>
+<h3 id="versionuser">VersionUser<a class="headerlink" href="#versionuser" title="Permanent link">&para;</a></h3>
+<p>The <code>VersionUser</code> table defines which individual users are allowed to access which versions. This only applies to versions with <code>RequireLogin</code> set to true.</p>
+<p>To give a user acess to a version, simply provide their user identifier and the ID from the <code>Versions</code> table.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can get a user's identifier (or your own) by getting them to go to <code>https://&lt;your-application-root&gt;/account/diagnostics</code> and looking up the <code>nameidentifier</code> value.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      All content is available under the Open Government Licence v3.0 except where otherwise stated
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Dorset-Council-UK/GIFramework-Maps" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
