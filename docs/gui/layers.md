@@ -83,8 +83,8 @@ There is a collapsible section for 'Advanced settings'. You should generally lea
 - Projection - If the layer is NOT in the standard EPSG:3857, you can put an alternative projection here. You will also need to enter a custom tile grid.
 - Custom tile grid - To make use of on the fly reprojection, you need to provide an appropriate custom tile grid, describing the resolutions and origins of the XYZ layer. The service provider should be able to provide this. It will be a simple JSON object
 - Minimum source zoom level (optional) - the minimum published zoom level this source has available. Setting these options allows you to make use of over and under-zooming the source. Leave blank for no minimum
-- Maximum source zoom level (optional) - the maximum published zoom level this source has available. Setting these options allows you to make use of over and under-zooming the source. Leave blank for no minimum
-- 
+- Maximum source zoom level (optional) - the maximum published zoom level this source has available. Setting these options allows you to make use of over and under-zooming the source. Leave blank for no maximum
+
 !!! example
     The custom tile grid for British National Grid EPSG:27700 is
     ```
