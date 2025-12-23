@@ -82,7 +82,9 @@ There is a collapsible section for 'Advanced settings'. You should generally lea
 - URL Template - This is what you entered on the previous screen. If you made a mistake you can update it here.
 - Projection - If the layer is NOT in the standard EPSG:3857, you can put an alternative projection here. You will also need to enter a custom tile grid.
 - Custom tile grid - To make use of on the fly reprojection, you need to provide an appropriate custom tile grid, describing the resolutions and origins of the XYZ layer. The service provider should be able to provide this. It will be a simple JSON object
-
+- Minimum source zoom level (optional) - the minimum published zoom level this source has available. Setting these options allows you to make use of over and under-zooming the source. Leave blank for no minimum
+- Maximum source zoom level (optional) - the maximum published zoom level this source has available. Setting these options allows you to make use of over and under-zooming the source. Leave blank for no minimum
+- 
 !!! example
     The custom tile grid for British National Grid EPSG:27700 is
     ```
@@ -91,6 +93,10 @@ There is a collapsible section for 'Advanced settings'. You should generally lea
         "origin": [-238375.0, 1376256.0]
     }
     ```
+
+!!! example "Over and under-zooming"
+    By setting a max source zoom level, you tell the map not to request tiles for anything beyond this level. You can then set the max zoom level on the layer itself to be a higher number, and the layer will still be visible, but won't request new tiles, instead it will just zoom in.
+    This is great for layers where you want people to see beyond the level that is published by the server. Use with care, as too much over-zooming will degrade the quality, and too much under-zooming will make the map unreadable.
 
 ### Adding non-WFS based vector layers
 
